@@ -1,0 +1,98 @@
+ndwc-checkbox {
+  --checkbox-size: 20px;
+  --checkbox-border-size: 2px;
+
+  label {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-family: $body-font-regular;
+    font-size: $font-size-m;
+    line-height: $line-height-m;
+    user-select: none;
+    cursor: pointer;
+    padding-left: calc(var(--checkbox-size) + $space-m);
+  }
+
+  /* Custom checkbox */
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(var(--checkbox-size) - (var(--checkbox-border-size) * 2));
+    width: calc(var(--checkbox-size) - (var(--checkbox-border-size) * 2));
+    background-color: transparent;
+    border: var(--checkbox-border-size) solid $nordea-blue;
+    border-radius: $border-radius-xs;
+
+    /* Checkmark */
+    &:after {
+      content: '';
+      position: absolute;
+      display: none;
+      left: calc(var(--checkbox-border-size) * 2);
+      top: 0px;
+      width: calc(var(--checkbox-border-size) * 3);
+      height: calc(var(--checkbox-size) / 2);
+      border: solid $white;
+      border-width: 0 var(--checkbox-border-size) var(--checkbox-border-size) 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  input {
+    /* Hide default checkbox */
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    /* Show custom checkmark when input is checked */
+    &:checked ~ span {
+      background-color: $nordea-blue;
+
+      &:after {
+        display: block;
+      }
+    }
+
+    &:focus-visible ~ span {
+      outline: calc(var(--checkbox-border-size) * 2) solid $nordea-blue;
+      outline-offset: var(--checkbox-border-size);
+    }
+  }
+
+  &[disabled] {
+    label {
+      cursor: default;
+      color: $nordea-gray;
+    }
+
+    span {
+      cursor: default;
+      border-color: $nordea-gray;
+
+      &:after {
+        border-color: $eclipse-gray;
+      }
+    }
+
+    input:checked ~ span {
+      background-color: $nordea-gray;
+    }
+  }
+
+  &:not([disabled])[error] {
+    span {
+      border-color: $dark-red;
+    }
+  }
+
+  &[indeterminate] {
+    span:after {
+      border-width: 0 var(--checkbox-border-size) 0 0;
+      transform: rotate(90deg);
+    }
+  }
+}

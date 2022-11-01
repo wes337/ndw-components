@@ -5,7 +5,6 @@ import { NwccIcon, NwccIconSize } from './icon.types';
 @Component({
   tag: 'ndwc-icon',
   styleUrl: 'icon.scss',
-  shadow: true,
 })
 export class Icon {
   @Prop() icon: NwccIcon | string = '';

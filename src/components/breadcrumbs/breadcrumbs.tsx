@@ -14,7 +14,7 @@ export class Breadcrumbs {
   render() {
     return (
       <Host>
-        <nav class={{ dark: !!this.dark }} aria-label="Breadcrumb">
+        <nav class={{ dark: !!this.dark }}>
           <ol>
             {this.breadcrumbs.map((breadcrumb, index) => {
               const isLastBreadcrumb = index === this.breadcrumbs.length - 1;

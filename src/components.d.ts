@@ -35,6 +35,13 @@ export namespace Components {
         "type": string;
         "variant": NwccButtonVariant;
     }
+    interface NdwcCheckbox {
+        "checked": boolean;
+        "disabled": boolean;
+        "error": boolean;
+        "indeterminate": boolean;
+        "name": string;
+    }
     interface NdwcIcon {
         "color": string;
         "icon": NwccIcon | string;
@@ -44,6 +51,10 @@ export namespace Components {
 export interface NdwcBreadcrumbsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLNdwcBreadcrumbsElement;
+}
+export interface NdwcCheckboxCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLNdwcCheckboxElement;
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -64,6 +75,12 @@ declare global {
         prototype: HTMLNdwcButtonElement;
         new (): HTMLNdwcButtonElement;
     };
+    interface HTMLNdwcCheckboxElement extends Components.NdwcCheckbox, HTMLStencilElement {
+    }
+    var HTMLNdwcCheckboxElement: {
+        prototype: HTMLNdwcCheckboxElement;
+        new (): HTMLNdwcCheckboxElement;
+    };
     interface HTMLNdwcIconElement extends Components.NdwcIcon, HTMLStencilElement {
     }
     var HTMLNdwcIconElement: {
@@ -74,6 +91,7 @@ declare global {
         "my-component": HTMLMyComponentElement;
         "ndwc-breadcrumbs": HTMLNdwcBreadcrumbsElement;
         "ndwc-button": HTMLNdwcButtonElement;
+        "ndwc-checkbox": HTMLNdwcCheckboxElement;
         "ndwc-icon": HTMLNdwcIconElement;
     }
 }
@@ -105,6 +123,15 @@ declare namespace LocalJSX {
         "type"?: string;
         "variant"?: NwccButtonVariant;
     }
+    interface NdwcCheckbox {
+        "checked"?: boolean;
+        "disabled"?: boolean;
+        "error"?: boolean;
+        "indeterminate"?: boolean;
+        "name"?: string;
+        "onOnBlur"?: (event: NdwcCheckboxCustomEvent<FocusEvent>) => void;
+        "onOnChange"?: (event: NdwcCheckboxCustomEvent<InputEvent>) => void;
+    }
     interface NdwcIcon {
         "color"?: string;
         "icon"?: NwccIcon | string;
@@ -114,6 +141,7 @@ declare namespace LocalJSX {
         "my-component": MyComponent;
         "ndwc-breadcrumbs": NdwcBreadcrumbs;
         "ndwc-button": NdwcButton;
+        "ndwc-checkbox": NdwcCheckbox;
         "ndwc-icon": NdwcIcon;
     }
 }
@@ -124,6 +152,7 @@ declare module "@stencil/core" {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "ndwc-breadcrumbs": LocalJSX.NdwcBreadcrumbs & JSXBase.HTMLAttributes<HTMLNdwcBreadcrumbsElement>;
             "ndwc-button": LocalJSX.NdwcButton & JSXBase.HTMLAttributes<HTMLNdwcButtonElement>;
+            "ndwc-checkbox": LocalJSX.NdwcCheckbox & JSXBase.HTMLAttributes<HTMLNdwcCheckboxElement>;
             "ndwc-icon": LocalJSX.NdwcIcon & JSXBase.HTMLAttributes<HTMLNdwcIconElement>;
         }
     }
