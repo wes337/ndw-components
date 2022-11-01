@@ -5,11 +5,11 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                             | Default    |
-| -------- | --------- | ----------- | -------------------------------- | ---------- |
-| `color`  | `color`   |             | `string`                         | `''`       |
-| `icon`   | `icon`    |             | `string`                         | `''`       |
-| `size`   | `size`    |             | `"large" \| "medium" \| "small"` | `'medium'` |
+| Property | Attribute | Description | Type                   | Default |
+| -------- | --------- | ----------- | ---------------------- | ------- |
+| `color`  | `color`   |             | `string`               | `''`    |
+| `icon`   | `icon`    |             | `string`               | `''`    |
+| `size`   | `size`    |             | `"lg" \| "md" \| "sm"` | `'md'`  |
 
 
 ## Dependencies

@@ -22,11 +22,13 @@
 
 ### Depends on
 
+- [ndwc-text](../text)
 - [ndwc-icon](../icon)
 
 ### Graph
 ```mermaid
 graph TD;
+  ndwc-breadcrumbs --> ndwc-text
   ndwc-breadcrumbs --> ndwc-icon
   style ndwc-breadcrumbs fill:#f9f,stroke:#333,stroke-width:4px
 ```
