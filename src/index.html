@@ -2,13 +2,88 @@
 <html dir="ltr" lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Nordea Web UI</title>
 
-    <script type="module" src="/build/ndw-ui.esm.js"></script>
-    <script nomodule src="/build/ndw-ui.js"></script>
+    <script type="module" src="/build/ndw-components.esm.js"></script>
+    <script nomodule src="/build/ndw-components.js"></script>
+    <style>
+      body {
+        visibility: hidden;
+      }
+      .enforce-dark-mode {
+        background-color: #000000;
+      }
+      .fonts-loaded {
+        visibility: visible;
+      }
+    </style>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <div style="margin-bottom: 24px">
+      <ndwc-button id="dark-mode-button">Toggle Dark Mode</ndwc-button>
+    </div>
+    <div id="breadcrumbs" style="padding: 16px">
+      <ndwc-breadcrumbs></ndwc-breadcrumbs>
+    </div>
+    <div id="breadcrumbs-dark" style="background-color: #00005e; padding: 16px; border-radius: 8px">
+      <ndwc-breadcrumbs dark></ndwc-breadcrumbs>
+    </div>
+    <div id="buttons" style="display: flex; padding: 16px; gap: 8px; align-items: center">
+      <ndwc-button disabled>Click me</ndwc-button>
+      <ndwc-button>Primary</ndwc-button>
+      <ndwc-button icon="send-alt">Primary with icon</ndwc-button>
+      <ndwc-button variant="secondary">Secondary</ndwc-button>
+      <ndwc-button variant="tertiary">Tertiary</ndwc-button>
+      <ndwc-button variant="tertiary" compact>Compact</ndwc-button>
+    </div>
+    <div
+      id="dark-buttons"
+      style="
+        display: flex;
+        padding: 16px;
+        border-radius: 8px;
+        gap: 8px;
+        align-items: center;
+        background-color: #00005e;
+      "
+    >
+      <ndwc-button disabled dark>Click me</ndwc-button>
+      <ndwc-button dark>Primary</ndwc-button>
+      <ndwc-button variant="secondary" dark>Secondary</ndwc-button>
+      <ndwc-button variant="tertiary" dark>Tertiary</ndwc-button>
+      <ndwc-button variant="tertiary" compact dark>Compact</ndwc-button>
+    </div>
+    <div id="icons">
+      <ndwc-icon icon="abacus"></ndwc-icon>
+    </div>
   </body>
+  <script>
+    document.fonts.ready.then(() => {
+      document.body.style.visibility = 'visible';
+      const darkModeButton = document.querySelector('#dark-mode-button');
+      darkModeButton.addEventListener('click', () => {
+        document.body.classList.toggle('enforce-dark-mode');
+      });
+
+      const buttons = document.querySelectorAll('#buttons ndwc-button');
+      buttons.forEach((button, i) => {
+        button.addEventListener('click', () => {
+          console.log('Clicked button number', i + 1);
+        });
+      });
+
+      const breadcrumbs = document.querySelectorAll('ndwc-breadcrumbs');
+      breadcrumbs.forEach(breadcrumb => {
+        breadcrumb.breadcrumbs = [
+          { title: 'Main page', href: '#' },
+          { title: 'Previous page', href: '#' },
+          { title: 'Current page' },
+        ];
+      });
+    });
+  </script>
 </html>

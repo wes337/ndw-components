@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Nordea Sans Small Web Regular';
+  src: url(/fonts/NordeaSansSmallWeb-Regular.ttf) format('truetype'),
+    url(/fonts/NordeaSansSmallWeb-Regular.eot) format('embedded-opentype'),
+    url(/fonts/NordeaSansSmallWeb-Regular.woff) format('woff'),
+    url(/fonts/NordeaSansSmallWeb-Regular.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Nordea Sans Small Web Medium';
+  src: url(/fonts/NordeaSansSmallWeb-Medium.ttf) format('truetype'),
+    url(/fonts/NordeaSansSmallWeb-Medium.eot) format('embedded-opentype'),
+    url(/fonts/NordeaSansSmallWeb-Medium.woff) format('woff'),
+    url(/fonts/NordeaSansSmallWeb-Medium.woff2) format('woff2');
+}
+
+$body-font-regular: 'Nordea Sans Small Web Regular', sans-serif;
+$body-font-medium: 'Nordea Sans Small Web Medium', sans-serif;

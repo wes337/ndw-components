@@ -1,7 +1,8 @@
 import { Config } from '@stencil/core';
+import { sass } from '@stencil/sass';
 
 export const config: Config = {
-  namespace: 'ndw-ui',
+  namespace: 'ndw-components',
   outputTargets: [
     {
       type: 'dist',
@@ -16,6 +17,19 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null, // disable service workers
+      copy: [
+        { src: 'assets/fonts', dest: 'fonts' },
+        { src: 'assets/icons', dest: 'icons' },
+      ],
     },
+  ],
+  plugins: [
+    sass({
+      injectGlobalPaths: [
+        'src/globals/variables.scss',
+        'src/globals/mixins.scss',
+        'src/globals/fonts.scss',
+      ],
+    }),
   ],
 };

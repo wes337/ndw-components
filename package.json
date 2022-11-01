@@ -1,5 +1,5 @@
 {
-  "name": "ndw-ui",
+  "name": "ndw-components",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
@@ -9,7 +9,7 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/ndw-ui/ndw-ui.esm.js",
+  "unpkg": "dist/ndw-components/ndw-components.esm.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ionic-team/stencil-component-starter.git"
@@ -23,12 +23,17 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "lint": "eslint src/**/*{.ts,.tsx}"
   },
   "dependencies": {
-    "@stencil/core": "^2.13.0"
+    "@iconfu/svg-inject": "^1.2.3",
+    "@stencil/core": "^2.13.0",
+    "svg-injector": "^1.1.3"
   },
   "devDependencies": {
+    "@stencil/eslint-plugin": "^0.4.0",
+    "@stencil/sass": "^2.0.0",
     "@types/jest": "^27.0.3",
     "jest": "^27.4.5",
     "jest-cli": "^27.4.5",

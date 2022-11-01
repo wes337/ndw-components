@@ -1,0 +1,13 @@
+@mixin transition($property, $duration, $timing) {
+  transition: $property $duration $timing;
+}
+
+@mixin dark-mode {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+
+  body.enforce-dark-mode {
+    @content;
+  }
+}

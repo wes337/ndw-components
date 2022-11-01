@@ -1,0 +1,68 @@
+ndwc-breadcrumbs {
+  nav {
+    font-family: $body-font-regular;
+    font-size: $font-size-s;
+    line-height: $line-height-m;
+
+    ol {
+      display: flex;
+      align-items: center;
+      gap: $space-m;
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: $space-m;
+    }
+
+    span {
+      color: $eclipse-gray;
+    }
+
+    a {
+      color: $nordea-blue;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:focus-visible {
+        outline: 2px solid $nordea-blue;
+        outline-offset: 2px;
+        border-radius: $border-radius-m;
+      }
+    }
+
+    ndwc-icon {
+      color: $deep-blue;
+    }
+
+    &.dark {
+      a {
+        color: $white;
+
+        &:focus-visible {
+          outline-color: $white;
+        }
+      }
+
+      span {
+        color: $medium-gray;
+      }
+
+      ndwc-icon {
+        color: $white;
+      }
+    }
+  }
+}

@@ -5,6 +5,9 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Breadcrumb } from "./components/breadcrumbs/breadcrumbs.types";
+import { NwccButtonVariant } from "./components/button/button.types";
+import { NwccIcon, NwccIconSize } from "./components/icon/icon.types";
 export namespace Components {
     interface MyComponent {
         /**
@@ -20,6 +23,27 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface NdwcBreadcrumbs {
+        "breadcrumbs": Breadcrumb[];
+        "dark": boolean;
+    }
+    interface NdwcButton {
+        "compact": boolean;
+        "dark": boolean;
+        "disabled": boolean;
+        "icon": string;
+        "type": string;
+        "variant": NwccButtonVariant;
+    }
+    interface NdwcIcon {
+        "color": string;
+        "icon": NwccIcon | string;
+        "size": NwccIconSize;
+    }
+}
+export interface NdwcBreadcrumbsCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLNdwcBreadcrumbsElement;
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +52,29 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLNdwcBreadcrumbsElement extends Components.NdwcBreadcrumbs, HTMLStencilElement {
+    }
+    var HTMLNdwcBreadcrumbsElement: {
+        prototype: HTMLNdwcBreadcrumbsElement;
+        new (): HTMLNdwcBreadcrumbsElement;
+    };
+    interface HTMLNdwcButtonElement extends Components.NdwcButton, HTMLStencilElement {
+    }
+    var HTMLNdwcButtonElement: {
+        prototype: HTMLNdwcButtonElement;
+        new (): HTMLNdwcButtonElement;
+    };
+    interface HTMLNdwcIconElement extends Components.NdwcIcon, HTMLStencilElement {
+    }
+    var HTMLNdwcIconElement: {
+        prototype: HTMLNdwcIconElement;
+        new (): HTMLNdwcIconElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "ndwc-breadcrumbs": HTMLNdwcBreadcrumbsElement;
+        "ndwc-button": HTMLNdwcButtonElement;
+        "ndwc-icon": HTMLNdwcIconElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +92,29 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface NdwcBreadcrumbs {
+        "breadcrumbs"?: Breadcrumb[];
+        "dark"?: boolean;
+        "onBreadcrumbClicked"?: (event: NdwcBreadcrumbsCustomEvent<MouseEvent>) => void;
+    }
+    interface NdwcButton {
+        "compact"?: boolean;
+        "dark"?: boolean;
+        "disabled"?: boolean;
+        "icon"?: string;
+        "type"?: string;
+        "variant"?: NwccButtonVariant;
+    }
+    interface NdwcIcon {
+        "color"?: string;
+        "icon"?: NwccIcon | string;
+        "size"?: NwccIconSize;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "ndwc-breadcrumbs": NdwcBreadcrumbs;
+        "ndwc-button": NdwcButton;
+        "ndwc-icon": NdwcIcon;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +122,9 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "ndwc-breadcrumbs": LocalJSX.NdwcBreadcrumbs & JSXBase.HTMLAttributes<HTMLNdwcBreadcrumbsElement>;
+            "ndwc-button": LocalJSX.NdwcButton & JSXBase.HTMLAttributes<HTMLNdwcButtonElement>;
+            "ndwc-icon": LocalJSX.NdwcIcon & JSXBase.HTMLAttributes<HTMLNdwcIconElement>;
         }
     }
 }

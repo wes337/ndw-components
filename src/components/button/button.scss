@@ -1,0 +1,123 @@
+ndwc-button {
+  --min-width: 120px;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-s;
+    cursor: pointer;
+    padding: $space-m $space-l;
+    font-size: $font-size-m;
+    line-height: $line-height-l;
+    min-width: var(--min-width);
+    border-radius: $border-radius-m;
+    white-space: nowrap;
+    font-family: $body-font-medium;
+
+    &:focus-visible {
+      outline: 4px solid $nordea-blue;
+      outline-offset: 2px;
+
+      &.dark {
+        outline-color: $white;
+      }
+    }
+
+    &:disabled {
+      cursor: default;
+      pointer-events: none;
+      opacity: 40%;
+    }
+
+    &.primary {
+      background-color: $nordea-blue;
+      color: $white;
+      border: 2px solid $nordea-blue;
+
+      &:not([disabled]):hover,
+      &:not([disabled]):active {
+        background-color: $vivid-blue;
+        border-color: $vivid-blue;
+      }
+
+      &.dark {
+        background-color: $white;
+        color: $nordea-blue;
+        border-color: $white;
+
+        &:not([disabled]):hover,
+        &:not([disabled]):active {
+          background-color: $light-blue;
+          border-color: $light-blue;
+        }
+      }
+
+      &:not([disabled]):hover,
+      &:not([disabled]):active {
+        background-color: $vivid-blue;
+        border-color: $vivid-blue;
+
+        &.dark {
+          background-color: $light-blue;
+          border-color: $light-blue;
+        }
+      }
+    }
+
+    &.secondary {
+      background-color: transparent;
+      color: $nordea-blue;
+      border: 2px solid $nordea-blue;
+
+      &:not([disabled]):hover,
+      &:not([disabled]):active {
+        color: $vivid-blue;
+        background-color: $cloud-blue;
+      }
+
+      &.dark {
+        color: $white;
+        border-color: $white;
+
+        &:not([disabled]):hover,
+        &:not([disabled]):active {
+          color: $light-blue;
+          background-color: rgba($light-blue, 0.25);
+          border-color: rgba($light-blue, 0.25);
+        }
+      }
+    }
+
+    &.tertiary {
+      background-color: transparent;
+      color: $nordea-blue;
+      border: 2px solid transparent;
+
+      &:not([disabled]):hover,
+      &:not([disabled]):active {
+        color: $vivid-blue;
+        background-color: $cloud-blue;
+      }
+
+      &:focus-visible {
+        outline-offset: 0;
+      }
+
+      &.dark {
+        color: $white;
+
+        &:not([disabled]):hover,
+        &:not([disabled]):active {
+          color: $light-blue;
+          background-color: rgba($light-blue, 0.25);
+        }
+      }
+    }
+
+    &.compact {
+      min-width: 0;
+      padding: $space-s;
+    }
+  }
+}
