@@ -18,8 +18,8 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null, // disable service workers
       copy: [
-        { src: 'assets/fonts', dest: 'fonts' },
-        { src: 'assets/icons', dest: 'icons' },
+        { src: 'assets/fonts', dest: 'assets/fonts' },
+        { src: 'assets/icons', dest: 'assets/icons' },
       ],
     },
   ],
