@@ -21,13 +21,15 @@ export class Breadcrumbs {
               return (
                 <li>
                   {isLastBreadcrumb ? (
-                    <span aria-current="page">{breadcrumb.title}</span>
+                    <ndwc-text size="md" aria-current="page">
+                      {breadcrumb.title}
+                    </ndwc-text>
                   ) : (
                     <div>
                       <a href={breadcrumb.href} onClick={this.breadcrumbClicked.emit}>
                         {breadcrumb.title}
                       </a>
-                      <ndwc-icon icon="chevron-right" size="small"></ndwc-icon>
+                      <ndwc-icon icon="chevron-right" size="sm"></ndwc-icon>
                     </div>
                   )}
                 </li>

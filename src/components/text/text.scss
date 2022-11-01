@@ -1,0 +1,66 @@
+ndwc-text {
+  & > * {
+    margin: 0;
+    padding: 0;
+  }
+
+  color: currentcolor;
+
+  &:not([header]) {
+    &[weight='regular'] {
+      font-family: $body-font-regular;
+    }
+
+    &[weight='medium'] {
+      font-family: $body-font-medium;
+    }
+
+    &[weight='bold'] {
+      font-family: $body-font-bold;
+    }
+  }
+
+  &[header] {
+    font-family: $header-font-bold;
+  }
+
+  &[size='sm'] {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  &[size='md'] {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &[size='lg'] {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &[size='xl'] {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  &[size='xxl'] {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  &[size='xxxl'] {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  &[size='xxxxl'] {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  &[size='xxxxxl'] {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}

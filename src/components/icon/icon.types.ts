@@ -1,4 +1,10 @@
-export type NwccIconSize = 'small' | 'medium' | 'large';
+export enum ICON_SIZE {
+  'sm' = 16,
+  'md' = 24,
+  'lg' = 32,
+}
+
+export type NwccIconSize = keyof typeof ICON_SIZE;
 
 export type NwccIcon =
   | 'abacus'
@@ -176,7 +182,7 @@ export type NwccIcon =
   | 'nova'
   | 'offline'
   | 'online-usage'
-  | 'order-finilized'
+  | 'order-finalized'
   | 'ordered'
   | 'orders'
   | 'other-identity-providers'

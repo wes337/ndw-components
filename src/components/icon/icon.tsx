@@ -1,6 +1,7 @@
-import { Component, Prop, h, Host, getAssetPath } from '@stencil/core';
+import { Component, Prop, h, Host } from '@stencil/core';
 import SVGInject from '@iconfu/svg-inject';
-import { NwccIcon, NwccIconSize } from './icon.types';
+import { S3_BUCKET_URL } from '../../constants';
+import { NwccIcon, NwccIconSize, ICON_SIZE } from './icon.types';
 
 @Component({
   tag: 'ndwc-icon',
@@ -8,21 +9,8 @@ import { NwccIcon, NwccIconSize } from './icon.types';
 })
 export class Icon {
   @Prop() icon: NwccIcon | string = '';
-  @Prop() size: NwccIconSize = 'medium';
+  @Prop() size: NwccIconSize = 'md';
   @Prop() color = '';
-
-  private getIconDimensions(): number {
-    switch (this.size) {
-      case 'small':
-        return 16;
-      case 'medium':
-        return 24;
-      case 'large':
-        return 32;
-      default:
-        return 24;
-    }
-  }
 
   private imgToSvg(event: Event) {
     SVGInject(event.target);
@@ -36,10 +24,10 @@ export class Icon {
     return (
       <Host style={{ color: this.color }}>
         <img
-          src={getAssetPath(`../assets/icons/${this.icon}.svg`)}
+          src={`${S3_BUCKET_URL}/icons/${this.icon}.svg`}
           alt=""
-          width={this.getIconDimensions()}
-          height={this.getIconDimensions()}
+          width={ICON_SIZE[this.size]}
+          height={ICON_SIZE[this.size]}
           onLoad={this.imgToSvg}
         />
       </Host>

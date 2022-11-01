@@ -1,18 +1,42 @@
-@font-face {
-  font-family: 'Nordea Sans Small Web Regular';
-  src: url(/assets/fonts/NordeaSansSmallWeb-Regular.ttf) format('truetype'),
-    url(/assets/fonts/NordeaSansSmallWeb-Regular.eot) format('embedded-opentype'),
-    url(/assets/fonts/NordeaSansSmallWeb-Regular.woff) format('woff'),
-    url(/assets/fonts/NordeaSansSmallWeb-Regular.woff2) format('woff2');
+$font-base-url: 'https://f004.backblazeb2.com/file/wes337/fonts';
+
+@mixin font($fontFamilyName, $fontFileName) {
+  @font-face {
+    font-family: $fontFamilyName;
+    src: url(#{$font-base-url}/#{$fontFileName}.ttf) format('truetype'),
+      url(#{$font-base-url}/#{$fontFileName}.eot) format('embedded-opentype'),
+      url(#{$font-base-url}/#{$fontFileName}.woff) format('woff'),
+      url(#{$font-base-url}/#{$fontFileName}.woff2) format('woff2');
+  }
 }
 
-@font-face {
-  font-family: 'Nordea Sans Small Web Medium';
-  src: url(/assets/fonts/NordeaSansSmallWeb-Medium.ttf) format('truetype'),
-    url(/assets/fonts/NordeaSansSmallWeb-Medium.eot) format('embedded-opentype'),
-    url(/assets/fonts/NordeaSansSmallWeb-Medium.woff) format('woff'),
-    url(/assets/fonts/NordeaSansSmallWeb-Medium.woff2) format('woff2');
-}
+/* Nordea Sans Small Web */
+@include font('Nordea Sans Small Web Regular', NordeaSansSmallWeb-Regular);
+@include font('Nordea Sans Small Web Medium', NordeaSansSmallWeb-Medium);
+@include font('Nordea Sans Small Web Light', NordeaSansSmallWeb-Light);
+@include font('Nordea Sans Small Web Bold', NordeaSansSmallWeb-Bold);
 
+$body-font-light: 'Nordea Sans Small Web Light', sans-serif;
 $body-font-regular: 'Nordea Sans Small Web Regular', sans-serif;
 $body-font-medium: 'Nordea Sans Small Web Medium', sans-serif;
+$body-font-bold: 'Nordea Sans Small Web Bold', sans-serif;
+
+/* Nordea Sans Large Web */
+@include font('Nordea Sans Large Web Regular', NordeaSansLargeWeb-Regular);
+@include font('Nordea Sans Large Web Medium', NordeaSansLargeWeb-Medium);
+@include font('Nordea Sans Large Web Light', NordeaSansLargeWeb-Light);
+@include font('Nordea Sans Large Web Bold', NordeaSansLargeWeb-Bold);
+
+$header-font-light: 'Nordea Sans Large Web Light', sans-serif;
+$header-font-regular: 'Nordea Sans Large Web Regular', sans-serif;
+$header-font-medium: 'Nordea Sans Large Web Medium', sans-serif;
+$header-font-bold: 'Nordea Sans Large Web Bold', sans-serif;
+
+/* Font sizes */
+$font-size-s: 14px;
+$font-size-m: 16px;
+$font-size-l: 24px;
+
+$line-height-s: 16px;
+$line-height-m: 20px;
+$line-height-l: 24px;

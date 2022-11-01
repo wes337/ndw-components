@@ -24,7 +24,7 @@ ndwc-breadcrumbs {
       gap: $space-m;
     }
 
-    span {
+    ndwc-text {
       color: $eclipse-gray;
     }
 
@@ -56,7 +56,7 @@ ndwc-breadcrumbs {
         }
       }
 
-      span {
+      ndwc-text {
         color: $medium-gray;
       }
 

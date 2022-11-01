@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Breadcrumb } from "./components/breadcrumbs/breadcrumbs.types";
 import { NwccButtonVariant } from "./components/button/button.types";
 import { NwccIcon, NwccIconSize } from "./components/icon/icon.types";
+import { NwccTextComponents, NwccTextSize, NwccTextWeight } from "./components/text/text.types";
 export namespace Components {
     interface MyComponent {
         /**
@@ -46,6 +47,12 @@ export namespace Components {
         "color": string;
         "icon": NwccIcon | string;
         "size": NwccIconSize;
+    }
+    interface NdwcText {
+        "as": NwccTextComponents;
+        "header": boolean;
+        "size": NwccTextSize;
+        "weight": NwccTextWeight;
     }
 }
 export interface NdwcBreadcrumbsCustomEvent<T> extends CustomEvent<T> {
@@ -87,12 +94,19 @@ declare global {
         prototype: HTMLNdwcIconElement;
         new (): HTMLNdwcIconElement;
     };
+    interface HTMLNdwcTextElement extends Components.NdwcText, HTMLStencilElement {
+    }
+    var HTMLNdwcTextElement: {
+        prototype: HTMLNdwcTextElement;
+        new (): HTMLNdwcTextElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
         "ndwc-breadcrumbs": HTMLNdwcBreadcrumbsElement;
         "ndwc-button": HTMLNdwcButtonElement;
         "ndwc-checkbox": HTMLNdwcCheckboxElement;
         "ndwc-icon": HTMLNdwcIconElement;
+        "ndwc-text": HTMLNdwcTextElement;
     }
 }
 declare namespace LocalJSX {
@@ -137,12 +151,19 @@ declare namespace LocalJSX {
         "icon"?: NwccIcon | string;
         "size"?: NwccIconSize;
     }
+    interface NdwcText {
+        "as"?: NwccTextComponents;
+        "header"?: boolean;
+        "size"?: NwccTextSize;
+        "weight"?: NwccTextWeight;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
         "ndwc-breadcrumbs": NdwcBreadcrumbs;
         "ndwc-button": NdwcButton;
         "ndwc-checkbox": NdwcCheckbox;
         "ndwc-icon": NdwcIcon;
+        "ndwc-text": NdwcText;
     }
 }
 export { LocalJSX as JSX };
@@ -154,6 +175,7 @@ declare module "@stencil/core" {
             "ndwc-button": LocalJSX.NdwcButton & JSXBase.HTMLAttributes<HTMLNdwcButtonElement>;
             "ndwc-checkbox": LocalJSX.NdwcCheckbox & JSXBase.HTMLAttributes<HTMLNdwcCheckboxElement>;
             "ndwc-icon": LocalJSX.NdwcIcon & JSXBase.HTMLAttributes<HTMLNdwcIconElement>;
+            "ndwc-text": LocalJSX.NdwcText & JSXBase.HTMLAttributes<HTMLNdwcTextElement>;
         }
     }
 }
