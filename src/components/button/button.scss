@@ -5,13 +5,13 @@ ndwc-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: $space-s;
+    gap: $space-sm;
     cursor: pointer;
-    padding: $space-m $space-l;
-    font-size: $font-size-m;
-    line-height: $line-height-l;
+    padding: $space-md $space-lg;
+    font-size: $font-size-lg;
+    line-height: $line-height-lg;
     min-width: var(--min-width);
-    border-radius: $border-radius-m;
+    border-radius: $border-radius-button;
     white-space: nowrap;
     font-family: $body-font-medium;
 
@@ -117,7 +117,7 @@ ndwc-button {
 
     &.compact {
       min-width: 0;
-      padding: $space-s;
+      padding: $space-sm;
     }
   }
 }

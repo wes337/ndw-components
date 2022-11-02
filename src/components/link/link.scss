@@ -1,0 +1,41 @@
+ndwc-link {
+  a {
+    font-family: $body-font-regular;
+    color: $nordea-blue;
+    display: flex;
+    text-decoration: underline;
+    align-items: center;
+    gap: $space-xs;
+
+    &:hover {
+      color: $vivid-blue;
+    }
+
+    &:focus-visible {
+      border-radius: $border-radius-button;
+      outline: 4px solid $nordea-blue;
+      outline-offset: 4px;
+    }
+  }
+
+  &[size='sm'] {
+    a {
+      font-size: $font-size-sm;
+      line-height: $line-height-sm;
+    }
+  }
+
+  &[size='md'] {
+    a {
+      font-size: $font-size-md;
+      line-height: $line-height-md;
+    }
+  }
+
+  &[size='lg'] {
+    a {
+      font-size: $font-size-lg;
+      line-height: $line-height-lg;
+    }
+  }
+}

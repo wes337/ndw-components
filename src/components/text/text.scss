@@ -25,42 +25,42 @@ ndwc-text {
   }
 
   &[size='sm'] {
-    font-size: 12px;
-    line-height: 16px;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
   }
 
   &[size='md'] {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: $font-size-md;
+    line-height: $line-height-md;
   }
 
   &[size='lg'] {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: $font-size-lg;
+    line-height: $line-height-lg;
   }
 
   &[size='xl'] {
-    font-size: 18px;
-    line-height: 26px;
+    font-size: $font-size-xl;
+    line-height: $line-height-xl;
   }
 
   &[size='xxl'] {
-    font-size: 22px;
-    line-height: 30px;
+    font-size: $font-size-xxl;
+    line-height: $line-height-xxl;
   }
 
   &[size='xxxl'] {
-    font-size: 26px;
-    line-height: 32px;
+    font-size: $font-size-xxxl;
+    line-height: $line-height-xxxl;
   }
 
   &[size='xxxxl'] {
-    font-size: 30px;
-    line-height: 36px;
+    font-size: $font-size-xxxxl;
+    line-height: $line-height-xxxxl;
   }
 
   &[size='xxxxxl'] {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: $font-size-xxxxxl;
+    line-height: $line-height-xxxxxl;
   }
 }

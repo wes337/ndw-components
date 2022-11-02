@@ -11,8 +11,8 @@ export class Checkbox {
   @Prop({ reflect: true, mutable: true }) indeterminate = false;
   @Prop({ reflect: true, mutable: true }) checked = false;
 
-  @Event() onChange: EventEmitter<InputEvent>;
-  @Event() onBlur: EventEmitter<FocusEvent>;
+  @Event() ndwcCheckboxChange: EventEmitter<InputEvent>;
+  @Event() ndwcCheckboxBlur: EventEmitter<FocusEvent>;
 
   constructor() {
     this.handleChange = this.handleChange.bind(this);
@@ -20,7 +20,7 @@ export class Checkbox {
 
   private handleChange(event: InputEvent): void {
     this.checked = (event.target as HTMLInputElement).checked;
-    this.onChange.emit(event);
+    this.ndwcCheckboxChange.emit(event);
   }
 
   private getAriaChecked(): string {
@@ -42,7 +42,7 @@ export class Checkbox {
             checked={this.checked}
             aria-checked={this.getAriaChecked()}
             onChange={this.handleChange}
-            onBlur={this.onBlur.emit}
+            onBlur={this.ndwcCheckboxBlur.emit}
           />
           <span></span>
           <slot />

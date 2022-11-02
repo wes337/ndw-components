@@ -18,12 +18,14 @@
 
  - [ndwc-breadcrumbs](../breadcrumbs)
  - [ndwc-button](../button)
+ - [ndwc-link](../link)
 
 ### Graph
 ```mermaid
 graph TD;
   ndwc-breadcrumbs --> ndwc-icon
   ndwc-button --> ndwc-icon
+  ndwc-link --> ndwc-icon
   style ndwc-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

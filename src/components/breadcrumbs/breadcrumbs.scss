@@ -1,13 +1,13 @@
 ndwc-breadcrumbs {
   nav {
     font-family: $body-font-regular;
-    font-size: $font-size-s;
-    line-height: $line-height-m;
+    font-size: $font-size-md;
+    line-height: $line-height-md;
 
     ol {
       display: flex;
       align-items: center;
-      gap: $space-m;
+      gap: $space-md;
       margin: 0;
       padding-left: 0;
       list-style: none;
@@ -21,7 +21,7 @@ ndwc-breadcrumbs {
     div {
       display: flex;
       align-items: center;
-      gap: $space-m;
+      gap: $space-md;
     }
 
     ndwc-text {
@@ -37,9 +37,9 @@ ndwc-breadcrumbs {
       }
 
       &:focus-visible {
-        outline: 2px solid $nordea-blue;
-        outline-offset: 2px;
-        border-radius: $border-radius-m;
+        outline: 4px solid $nordea-blue;
+        outline-offset: 4px;
+        border-radius: $border-radius-button;
       }
     }
 

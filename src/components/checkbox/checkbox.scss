@@ -7,11 +7,11 @@ ndwc-checkbox {
     align-items: center;
     position: relative;
     font-family: $body-font-regular;
-    font-size: $font-size-m;
-    line-height: $line-height-m;
+    font-size: $font-size-lg;
+    line-height: $line-height-md;
     user-select: none;
     cursor: pointer;
-    padding-left: calc(var(--checkbox-size) + $space-m);
+    padding-left: calc(var(--checkbox-size) + $space-md);
   }
 
   /* Custom checkbox */
