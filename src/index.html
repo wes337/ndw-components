@@ -165,6 +165,42 @@
         </ndwc-info-banner>
       </div>
     </div>
+    <div id="inputs" style="display: flex; flex-direction: column; padding: 16px; gap: 8px">
+      <ndwc-input type="text" label="Street name and number" value="Töölönkatu 4"></ndwc-input>
+      <ndwc-input
+        type="text"
+        label="Daily cash withdrawal"
+        value="100"
+        hint="Set limit from 0 to 10 000 EUR, use 20 EUR increments"
+      ></ndwc-input>
+      <ndwc-input
+        type="text"
+        label="Daily cash withdrawal"
+        value="100"
+        hint="Set limit from 0 to 10 000 EUR, use 20 EUR increments"
+        error="Check that daily cash withdrawal is in 20 EUR increments"
+      ></ndwc-input>
+      <ndwc-input
+        type="text"
+        label="Monthly loan payment"
+        value="650,00"
+        error="Fill in your monthly loan payment"
+      ></ndwc-input>
+      <ndwc-input
+        type="text"
+        label="Daily cash withdrawal"
+        value="100"
+        hint="Set limit from 0 to 10 000 EUR, use 20 EUR increments"
+        disabled
+      ></ndwc-input>
+      <ndwc-input
+        type="text"
+        label="Daily cash withdrawal"
+        value="100"
+        hint="Set limit from 0 to 10 000 EUR, use 20 EUR increments"
+        readonly
+      ></ndwc-input>
+    </div>
   </body>
   <script>
     document.fonts.ready.then(() => {

@@ -167,6 +167,51 @@
         {
           "name": "label",
           "description": ""
+        },
+        {
+          "name": "soft",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "ndwc-input",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "disabled",
+          "description": ""
+        },
+        {
+          "name": "error",
+          "description": ""
+        },
+        {
+          "name": "hint",
+          "description": ""
+        },
+        {
+          "name": "inputmode",
+          "description": ""
+        },
+        {
+          "name": "label",
+          "description": ""
+        },
+        {
+          "name": "readonly",
+          "description": ""
+        },
+        {
+          "name": "type",
+          "description": ""
+        },
+        {
+          "name": "value",
+          "description": ""
         }
       ]
     },

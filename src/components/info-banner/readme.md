@@ -7,10 +7,18 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `action` | `action`  |             | `string` | `undefined` |
-| `label`  | `label`   |             | `string` | `undefined` |
+| Property | Attribute | Description | Type      | Default     |
+| -------- | --------- | ----------- | --------- | ----------- |
+| `action` | `action`  |             | `string`  | `undefined` |
+| `label`  | `label`   |             | `string`  | `undefined` |
+| `soft`   | `soft`    |             | `boolean` | `undefined` |
+
+
+## Events
+
+| Event           | Description | Type                      |
+| --------------- | ----------- | ------------------------- |
+| `actionClicked` |             | `CustomEvent<MouseEvent>` |
 
 
 ## Dependencies

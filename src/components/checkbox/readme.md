@@ -18,10 +18,11 @@
 
 ## Events
 
-| Event             | Description | Type                      |
-| ----------------- | ----------- | ------------------------- |
-| `checkboxBlurred` |             | `CustomEvent<FocusEvent>` |
-| `checkboxChanged` |             | `CustomEvent<InputEvent>` |
+| Event            | Description | Type                      |
+| ---------------- | ----------- | ------------------------- |
+| `checkboxBlur`   |             | `CustomEvent<FocusEvent>` |
+| `checkboxChange` |             | `CustomEvent<InputEvent>` |
+| `checkboxFocus`  |             | `CustomEvent<FocusEvent>` |
 
 
 ----------------------------------------------

@@ -57,6 +57,16 @@ export namespace Components {
         "label": string;
         "soft": boolean;
     }
+    interface NdwcInput {
+        "disabled": boolean;
+        "error": string;
+        "hint": string;
+        "inputmode": string;
+        "label": string;
+        "readonly": boolean;
+        "type": string;
+        "value": string;
+    }
     interface NdwcLink {
         "external": boolean;
         "href": string;
@@ -91,6 +101,10 @@ export interface NdwcCheckboxCustomEvent<T> extends CustomEvent<T> {
 export interface NdwcInfoBannerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLNdwcInfoBannerElement;
+}
+export interface NdwcInputCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLNdwcInputElement;
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -135,6 +149,12 @@ declare global {
         prototype: HTMLNdwcInfoBannerElement;
         new (): HTMLNdwcInfoBannerElement;
     };
+    interface HTMLNdwcInputElement extends Components.NdwcInput, HTMLStencilElement {
+    }
+    var HTMLNdwcInputElement: {
+        prototype: HTMLNdwcInputElement;
+        new (): HTMLNdwcInputElement;
+    };
     interface HTMLNdwcLinkElement extends Components.NdwcLink, HTMLStencilElement {
     }
     var HTMLNdwcLinkElement: {
@@ -167,6 +187,7 @@ declare global {
         "ndwc-checkbox": HTMLNdwcCheckboxElement;
         "ndwc-icon": HTMLNdwcIconElement;
         "ndwc-info-banner": HTMLNdwcInfoBannerElement;
+        "ndwc-input": HTMLNdwcInputElement;
         "ndwc-link": HTMLNdwcLinkElement;
         "ndwc-rich-button": HTMLNdwcRichButtonElement;
         "ndwc-round-button": HTMLNdwcRoundButtonElement;
@@ -191,7 +212,7 @@ declare namespace LocalJSX {
     interface NdwcBreadcrumbs {
         "breadcrumbs"?: Breadcrumb[];
         "dark"?: boolean;
-        "onBreadcrumbClicked"?: (event: NdwcBreadcrumbsCustomEvent<MouseEvent>) => void;
+        "onBreadcrumbClick"?: (event: NdwcBreadcrumbsCustomEvent<MouseEvent>) => void;
     }
     interface NdwcButton {
         "compact"?: boolean;
@@ -210,8 +231,9 @@ declare namespace LocalJSX {
         "error"?: boolean;
         "indeterminate"?: boolean;
         "name"?: string;
-        "onCheckboxBlurred"?: (event: NdwcCheckboxCustomEvent<FocusEvent>) => void;
-        "onCheckboxChanged"?: (event: NdwcCheckboxCustomEvent<InputEvent>) => void;
+        "onCheckboxBlur"?: (event: NdwcCheckboxCustomEvent<FocusEvent>) => void;
+        "onCheckboxChange"?: (event: NdwcCheckboxCustomEvent<InputEvent>) => void;
+        "onCheckboxFocus"?: (event: NdwcCheckboxCustomEvent<FocusEvent>) => void;
     }
     interface NdwcIcon {
         "color"?: string;
@@ -223,6 +245,20 @@ declare namespace LocalJSX {
         "label"?: string;
         "onActionClicked"?: (event: NdwcInfoBannerCustomEvent<MouseEvent>) => void;
         "soft"?: boolean;
+    }
+    interface NdwcInput {
+        "disabled"?: boolean;
+        "error"?: string;
+        "hint"?: string;
+        "inputmode"?: string;
+        "label"?: string;
+        "onInputBlur"?: (event: NdwcInputCustomEvent<FocusEvent>) => void;
+        "onInputChange"?: (event: NdwcInputCustomEvent<InputEvent>) => void;
+        "onInputFocus"?: (event: NdwcInputCustomEvent<FocusEvent>) => void;
+        "onInputKeyDown"?: (event: NdwcInputCustomEvent<KeyboardEvent>) => void;
+        "readonly"?: boolean;
+        "type"?: string;
+        "value"?: string;
     }
     interface NdwcLink {
         "external"?: boolean;
@@ -254,6 +290,7 @@ declare namespace LocalJSX {
         "ndwc-checkbox": NdwcCheckbox;
         "ndwc-icon": NdwcIcon;
         "ndwc-info-banner": NdwcInfoBanner;
+        "ndwc-input": NdwcInput;
         "ndwc-link": NdwcLink;
         "ndwc-rich-button": NdwcRichButton;
         "ndwc-round-button": NdwcRoundButton;
@@ -271,6 +308,7 @@ declare module "@stencil/core" {
             "ndwc-checkbox": LocalJSX.NdwcCheckbox & JSXBase.HTMLAttributes<HTMLNdwcCheckboxElement>;
             "ndwc-icon": LocalJSX.NdwcIcon & JSXBase.HTMLAttributes<HTMLNdwcIconElement>;
             "ndwc-info-banner": LocalJSX.NdwcInfoBanner & JSXBase.HTMLAttributes<HTMLNdwcInfoBannerElement>;
+            "ndwc-input": LocalJSX.NdwcInput & JSXBase.HTMLAttributes<HTMLNdwcInputElement>;
             "ndwc-link": LocalJSX.NdwcLink & JSXBase.HTMLAttributes<HTMLNdwcLinkElement>;
             "ndwc-rich-button": LocalJSX.NdwcRichButton & JSXBase.HTMLAttributes<HTMLNdwcRichButtonElement>;
             "ndwc-round-button": LocalJSX.NdwcRoundButton & JSXBase.HTMLAttributes<HTMLNdwcRoundButtonElement>;

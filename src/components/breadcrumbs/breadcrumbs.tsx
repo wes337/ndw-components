@@ -9,7 +9,7 @@ export class Breadcrumbs {
   @Prop() breadcrumbs: Breadcrumb[];
   @Prop({ reflect: true }) dark = false;
 
-  @Event() breadcrumbClicked: EventEmitter<MouseEvent>;
+  @Event() breadcrumbClick: EventEmitter<MouseEvent>;
 
   render() {
     return (
@@ -26,7 +26,7 @@ export class Breadcrumbs {
                     </ndwc-text>
                   ) : (
                     <div>
-                      <a href={breadcrumb.href} onClick={this.breadcrumbClicked.emit}>
+                      <a href={breadcrumb.href} onClick={this.breadcrumbClick.emit}>
                         {breadcrumb.title}
                       </a>
                       <ndwc-icon icon="chevron-right" size="sm"></ndwc-icon>

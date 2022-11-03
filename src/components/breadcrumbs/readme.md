@@ -13,9 +13,9 @@
 
 ## Events
 
-| Event               | Description | Type                      |
-| ------------------- | ----------- | ------------------------- |
-| `breadcrumbClicked` |             | `CustomEvent<MouseEvent>` |
+| Event             | Description | Type                      |
+| ----------------- | ----------- | ------------------------- |
+| `breadcrumbClick` |             | `CustomEvent<MouseEvent>` |
 
 
 ## Dependencies

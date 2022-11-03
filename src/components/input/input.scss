@@ -1,0 +1,74 @@
+ndwc-input {
+  font-family: $body-font-regular;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+
+    input {
+      background-color: $white;
+      border: 0;
+      outline: 1px solid $medium-gray;
+      border-radius: $border-radius-sm;
+      padding: $space-md calc($space-md + $space-sm);
+      font-size: $font-size-lg;
+      line-height: $line-height-lg;
+      max-width: 480px;
+      flex-grow: 1;
+
+      &:focus {
+        outline-color: $nordea-blue;
+      }
+    }
+
+    span {
+      font-size: $font-size-md;
+      line-height: $line-height-md;
+
+      &:last-child {
+        color: $dark-gray;
+      }
+    }
+  }
+
+  &[error] {
+    label {
+      input {
+        outline-color: $dark-red;
+      }
+
+      span,
+      div {
+        display: flex;
+        align-items: center;
+        gap: $space-md;
+        color: $dark-red;
+      }
+
+      // Hint does not change to error colour
+      span:nth-of-type(2) {
+        color: $dark-gray;
+      }
+    }
+  }
+
+  &[disabled] {
+    label,
+    label span,
+    input {
+      color: $nordea-gray;
+    }
+
+    input {
+      background-color: $cool-gray;
+    }
+  }
+
+  &[readonly] {
+    input {
+      color: $nordea-gray;
+      background-color: $cool-gray;
+    }
+  }
+}

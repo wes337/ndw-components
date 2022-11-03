@@ -19,6 +19,7 @@
  - [ndwc-breadcrumbs](../breadcrumbs)
  - [ndwc-button](../button)
  - [ndwc-info-banner](../info-banner)
+ - [ndwc-input](../input)
  - [ndwc-link](../link)
  - [ndwc-rich-button](../rich-button)
  - [ndwc-round-button](../round-button)
@@ -29,6 +30,7 @@ graph TD;
   ndwc-breadcrumbs --> ndwc-icon
   ndwc-button --> ndwc-icon
   ndwc-info-banner --> ndwc-icon
+  ndwc-input --> ndwc-icon
   ndwc-link --> ndwc-icon
   ndwc-rich-button --> ndwc-icon
   ndwc-round-button --> ndwc-icon
