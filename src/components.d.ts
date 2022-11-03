@@ -52,6 +52,10 @@ export namespace Components {
         "icon": NwccIcon | string;
         "size": NwccIconSize;
     }
+    interface NdwcInfoBanner {
+        "action": string;
+        "label": string;
+    }
     interface NdwcLink {
         "external": boolean;
         "href": string;
@@ -63,6 +67,10 @@ export namespace Components {
         "icon": string;
         "label": string;
         "labelFirst": boolean;
+    }
+    interface NdwcRoundButton {
+        "disabled": boolean;
+        "icon": string;
     }
     interface NdwcText {
         "as": NwccTextComponents;
@@ -116,6 +124,12 @@ declare global {
         prototype: HTMLNdwcIconElement;
         new (): HTMLNdwcIconElement;
     };
+    interface HTMLNdwcInfoBannerElement extends Components.NdwcInfoBanner, HTMLStencilElement {
+    }
+    var HTMLNdwcInfoBannerElement: {
+        prototype: HTMLNdwcInfoBannerElement;
+        new (): HTMLNdwcInfoBannerElement;
+    };
     interface HTMLNdwcLinkElement extends Components.NdwcLink, HTMLStencilElement {
     }
     var HTMLNdwcLinkElement: {
@@ -127,6 +141,12 @@ declare global {
     var HTMLNdwcRichButtonElement: {
         prototype: HTMLNdwcRichButtonElement;
         new (): HTMLNdwcRichButtonElement;
+    };
+    interface HTMLNdwcRoundButtonElement extends Components.NdwcRoundButton, HTMLStencilElement {
+    }
+    var HTMLNdwcRoundButtonElement: {
+        prototype: HTMLNdwcRoundButtonElement;
+        new (): HTMLNdwcRoundButtonElement;
     };
     interface HTMLNdwcTextElement extends Components.NdwcText, HTMLStencilElement {
     }
@@ -141,8 +161,10 @@ declare global {
         "ndwc-button-group": HTMLNdwcButtonGroupElement;
         "ndwc-checkbox": HTMLNdwcCheckboxElement;
         "ndwc-icon": HTMLNdwcIconElement;
+        "ndwc-info-banner": HTMLNdwcInfoBannerElement;
         "ndwc-link": HTMLNdwcLinkElement;
         "ndwc-rich-button": HTMLNdwcRichButtonElement;
+        "ndwc-round-button": HTMLNdwcRoundButtonElement;
         "ndwc-text": HTMLNdwcTextElement;
     }
 }
@@ -183,13 +205,17 @@ declare namespace LocalJSX {
         "error"?: boolean;
         "indeterminate"?: boolean;
         "name"?: string;
-        "onNdwcCheckboxBlur"?: (event: NdwcCheckboxCustomEvent<FocusEvent>) => void;
-        "onNdwcCheckboxChange"?: (event: NdwcCheckboxCustomEvent<InputEvent>) => void;
+        "onCheckboxBlurred"?: (event: NdwcCheckboxCustomEvent<FocusEvent>) => void;
+        "onCheckboxChanged"?: (event: NdwcCheckboxCustomEvent<InputEvent>) => void;
     }
     interface NdwcIcon {
         "color"?: string;
-        "icon"?: NwccIcon | string;
+        "icon": NwccIcon | string;
         "size"?: NwccIconSize;
+    }
+    interface NdwcInfoBanner {
+        "action"?: string;
+        "label"?: string;
     }
     interface NdwcLink {
         "external"?: boolean;
@@ -202,6 +228,10 @@ declare namespace LocalJSX {
         "icon"?: string;
         "label"?: string;
         "labelFirst"?: boolean;
+    }
+    interface NdwcRoundButton {
+        "disabled"?: boolean;
+        "icon": string;
     }
     interface NdwcText {
         "as"?: NwccTextComponents;
@@ -216,8 +246,10 @@ declare namespace LocalJSX {
         "ndwc-button-group": NdwcButtonGroup;
         "ndwc-checkbox": NdwcCheckbox;
         "ndwc-icon": NdwcIcon;
+        "ndwc-info-banner": NdwcInfoBanner;
         "ndwc-link": NdwcLink;
         "ndwc-rich-button": NdwcRichButton;
+        "ndwc-round-button": NdwcRoundButton;
         "ndwc-text": NdwcText;
     }
 }
@@ -231,8 +263,10 @@ declare module "@stencil/core" {
             "ndwc-button-group": LocalJSX.NdwcButtonGroup & JSXBase.HTMLAttributes<HTMLNdwcButtonGroupElement>;
             "ndwc-checkbox": LocalJSX.NdwcCheckbox & JSXBase.HTMLAttributes<HTMLNdwcCheckboxElement>;
             "ndwc-icon": LocalJSX.NdwcIcon & JSXBase.HTMLAttributes<HTMLNdwcIconElement>;
+            "ndwc-info-banner": LocalJSX.NdwcInfoBanner & JSXBase.HTMLAttributes<HTMLNdwcInfoBannerElement>;
             "ndwc-link": LocalJSX.NdwcLink & JSXBase.HTMLAttributes<HTMLNdwcLinkElement>;
             "ndwc-rich-button": LocalJSX.NdwcRichButton & JSXBase.HTMLAttributes<HTMLNdwcRichButtonElement>;
+            "ndwc-round-button": LocalJSX.NdwcRoundButton & JSXBase.HTMLAttributes<HTMLNdwcRoundButtonElement>;
             "ndwc-text": LocalJSX.NdwcText & JSXBase.HTMLAttributes<HTMLNdwcTextElement>;
         }
     }

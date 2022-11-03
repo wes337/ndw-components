@@ -18,10 +18,10 @@
 
 ## Events
 
-| Event                | Description | Type                      |
-| -------------------- | ----------- | ------------------------- |
-| `ndwcCheckboxBlur`   |             | `CustomEvent<FocusEvent>` |
-| `ndwcCheckboxChange` |             | `CustomEvent<InputEvent>` |
+| Event             | Description | Type                      |
+| ----------------- | ----------- | ------------------------- |
+| `checkboxBlurred` |             | `CustomEvent<FocusEvent>` |
+| `checkboxChanged` |             | `CustomEvent<InputEvent>` |
 
 
 ----------------------------------------------

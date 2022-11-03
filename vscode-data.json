@@ -154,6 +154,23 @@
       ]
     },
     {
+      "name": "ndwc-info-banner",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "action",
+          "description": ""
+        },
+        {
+          "name": "label",
+          "description": ""
+        }
+      ]
+    },
+    {
       "name": "ndwc-link",
       "description": {
         "kind": "markdown",
@@ -210,6 +227,23 @@
         },
         {
           "name": "label-first",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "ndwc-round-button",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "disabled",
+          "description": ""
+        },
+        {
+          "name": "icon",
           "description": ""
         }
       ]

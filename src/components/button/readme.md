@@ -17,6 +17,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [ndwc-info-banner](../info-banner)
+
 ### Depends on
 
 - [ndwc-icon](../icon)
@@ -25,6 +29,7 @@
 ```mermaid
 graph TD;
   ndwc-button --> ndwc-icon
+  ndwc-info-banner --> ndwc-button
   style ndwc-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -37,9 +37,7 @@ ndwc-breadcrumbs {
       }
 
       &:focus-visible {
-        outline: 4px solid $nordea-blue;
-        outline-offset: 4px;
-        border-radius: $button-border-radius;
+        @include defaultFocusStyles;
       }
     }
 

@@ -11,3 +11,9 @@
     @content;
   }
 }
+
+@mixin defaultFocusStyles() {
+  outline: 4px solid $nordea-blue;
+  outline-offset: 2px;
+  border-radius: $button-border-radius;
+}

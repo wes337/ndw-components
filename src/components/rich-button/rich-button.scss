@@ -2,11 +2,11 @@ ndwc-rich-button {
   button {
     display: flex;
     align-items: center;
-    gap: $space-sm;
+    gap: $space-md;
     font-family: $body-font-regular;
     background-color: $white;
     border: 1px solid $light-gray;
-    border-radius: $border-radius-m;
+    border-radius: $border-radius-md;
     font-size: $font-size-lg;
     line-height: $line-height-lg;
     padding: $space-lg;
@@ -18,12 +18,8 @@ ndwc-rich-button {
     }
 
     &:focus-visible {
-      outline: 4px solid $nordea-blue;
-      outline-offset: 2px;
-
-      &.dark {
-        outline-color: $white;
-      }
+      @include defaultFocusStyles;
+      border-radius: $border-radius-md;
     }
 
     div {

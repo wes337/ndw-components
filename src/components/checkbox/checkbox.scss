@@ -14,7 +14,6 @@ ndwc-checkbox {
     padding-left: calc(var(--checkbox-size) + $space-md);
   }
 
-  /* Custom checkbox */
   span {
     position: absolute;
     top: 0;
@@ -25,7 +24,6 @@ ndwc-checkbox {
     border: var(--checkbox-border-size) solid $nordea-blue;
     border-radius: $border-radius-xs;
 
-    /* Checkmark */
     &:after {
       content: '';
       position: absolute;
@@ -41,14 +39,12 @@ ndwc-checkbox {
   }
 
   input {
-    /* Hide default checkbox */
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
 
-    /* Show custom checkmark when input is checked */
     &:checked ~ span {
       background-color: $nordea-blue;
 

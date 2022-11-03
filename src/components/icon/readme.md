@@ -5,11 +5,11 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                   | Default |
-| -------- | --------- | ----------- | ---------------------- | ------- |
-| `color`  | `color`   |             | `string`               | `''`    |
-| `icon`   | `icon`    |             | `string`               | `''`    |
-| `size`   | `size`    |             | `"lg" \| "md" \| "sm"` | `'md'`  |
+| Property            | Attribute | Description | Type                   | Default     |
+| ------------------- | --------- | ----------- | ---------------------- | ----------- |
+| `color`             | `color`   |             | `string`               | `undefined` |
+| `icon` _(required)_ | `icon`    |             | `string`               | `undefined` |
+| `size`              | `size`    |             | `"lg" \| "md" \| "sm"` | `'md'`      |
 
 
 ## Dependencies
@@ -18,16 +18,20 @@
 
  - [ndwc-breadcrumbs](../breadcrumbs)
  - [ndwc-button](../button)
+ - [ndwc-info-banner](../info-banner)
  - [ndwc-link](../link)
  - [ndwc-rich-button](../rich-button)
+ - [ndwc-round-button](../round-button)
 
 ### Graph
 ```mermaid
 graph TD;
   ndwc-breadcrumbs --> ndwc-icon
   ndwc-button --> ndwc-icon
+  ndwc-info-banner --> ndwc-icon
   ndwc-link --> ndwc-icon
   ndwc-rich-button --> ndwc-icon
+  ndwc-round-button --> ndwc-icon
   style ndwc-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

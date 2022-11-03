@@ -3,7 +3,7 @@ ndwc-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: $space-sm;
+    gap: $space-md;
     cursor: pointer;
     padding: $space-md $space-lg;
     font-size: $font-size-lg;
@@ -15,8 +15,7 @@ ndwc-button {
     font-family: $body-font-medium;
 
     &:focus-visible {
-      outline: 4px solid $nordea-blue;
-      outline-offset: 2px;
+      @include defaultFocusStyles;
 
       &.dark {
         outline-color: $white;

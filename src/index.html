@@ -89,6 +89,12 @@
           Primary label
         </ndwc-rich-button>
       </div>
+      <div
+        id="round-buttons"
+        style="display: flex; flex-direction: column; padding: 16px; gap: 8px"
+      >
+        <ndwc-round-button icon="additional-info">Action</ndwc-round-button>
+      </div>
       <hr />
     </div>
 
@@ -125,18 +131,38 @@
       <ndwc-text size="xxxxxl" header>The quick brown fox jumps over the lazy dog.</ndwc-text>
     </div>
     <div style="display: flex; padding: 16px; gap: 8px">
-      <div>
+      <div style="display: flex; flex-direction: column">
         <ndwc-link href="#" size="sm">Small link</ndwc-link>
         <ndwc-link href="#" size="sm" external>Small external link</ndwc-link>
       </div>
-      <div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
         <ndwc-link href="#">Medium link</ndwc-link>
         <ndwc-link href="#" external>Medium external link</ndwc-link>
         <ndwc-link href="#" icon="pdf-file">Medium link with icon</ndwc-link>
       </div>
-      <div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
         <ndwc-link href="#" size="lg">Large link</ndwc-link>
         <ndwc-link href="#" size="lg" external>Large external link</ndwc-link>
+      </div>
+    </div>
+    <div id="info-banners" style="display: flex; padding: 16px; gap: 8px">
+      <div style="display: flex; flex: 50%; flex-direction: column; gap: 8px">
+        <ndwc-info-banner>Fill in KID or message in the fields below</ndwc-info-banner>
+        <ndwc-info-banner label="Primary label">
+          Fill in KID or message in the fields below
+        </ndwc-info-banner>
+        <ndwc-info-banner label="Primary label" action="CTA">
+          Fill in KID or message in the fields below
+        </ndwc-info-banner>
+      </div>
+      <div style="display: flex; flex: 50%; flex-direction: column; gap: 8px">
+        <ndwc-info-banner soft>Fill in KID or message in the fields below</ndwc-info-banner>
+        <ndwc-info-banner label="Primary label" soft>
+          Fill in KID or message in the fields below
+        </ndwc-info-banner>
+        <ndwc-info-banner label="Primary label" action="CTA" soft>
+          Fill in KID or message in the fields below
+        </ndwc-info-banner>
       </div>
     </div>
   </body>

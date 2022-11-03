@@ -1,0 +1,41 @@
+ndwc-round-button {
+  button {
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: $body-font-regular;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+    align-items: center;
+
+    div {
+      padding: $space-md;
+      border-radius: $border-radius-round;
+      background-color: $white;
+      border: 1px solid $light-gray;
+
+      ndwc-icon {
+        color: $nordea-blue;
+      }
+    }
+
+    &:hover {
+      div {
+        background-color: $cloud-blue;
+        border-color: $light-blue;
+      }
+    }
+
+    &:focus-visible {
+      outline: none;
+
+      div {
+        @include defaultFocusStyles();
+        border-radius: $border-radius-round;
+      }
+    }
+  }
+}

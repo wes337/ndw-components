@@ -8,21 +8,23 @@ import { NwccIcon, NwccIconSize, ICON_SIZE } from './icon.types';
   styleUrl: 'icon.scss',
 })
 export class Icon {
-  @Prop() icon: NwccIcon | string = '';
-  @Prop() size: NwccIconSize = 'md';
-  @Prop() color = '';
+  @Prop() icon!: NwccIcon | string;
+  @Prop({ reflect: true }) size: NwccIconSize = 'md';
+  @Prop() color: string;
 
   private imgToSvg(event: Event) {
-    SVGInject(event.target);
+    SVGInject(event.target, {
+      beforeInject: (_, svg: SVGElement) => {
+        const offset = 4;
+        svg.setAttribute('viewBox', `${offset} ${offset} 24 24`);
+        return svg;
+      },
+    });
   }
 
   render() {
-    if (this.icon.length === 0) {
-      return null;
-    }
-
     return (
-      <Host style={{ color: this.color }}>
+      <Host style={{ color: this.color }} aria-hidden="true">
         <img
           src={`${S3_BUCKET_URL}/icons/${this.icon}.svg`}
           alt=""

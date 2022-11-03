@@ -2,19 +2,17 @@ ndwc-link {
   a {
     font-family: $body-font-regular;
     color: $nordea-blue;
-    display: flex;
+    display: inline-flex;
     text-decoration: underline;
     align-items: center;
-    gap: $space-xs;
+    gap: $space-sm;
 
     &:hover {
       color: $vivid-blue;
     }
 
     &:focus-visible {
-      border-radius: $button-border-radius;
-      outline: 4px solid $nordea-blue;
-      outline-offset: 4px;
+      @include defaultFocusStyles;
     }
   }
 
