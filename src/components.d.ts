@@ -61,6 +61,7 @@ export namespace Components {
         "disabled": boolean;
         "error": string;
         "hint": string;
+        "icon": string;
         "inputmode": string;
         "label": string;
         "readonly": boolean;
@@ -250,6 +251,7 @@ declare namespace LocalJSX {
         "disabled"?: boolean;
         "error"?: string;
         "hint"?: string;
+        "icon"?: string;
         "inputmode"?: string;
         "label"?: string;
         "onInputBlur"?: (event: NdwcInputCustomEvent<FocusEvent>) => void;

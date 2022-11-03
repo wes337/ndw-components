@@ -12,6 +12,7 @@
 | `disabled`  | `disabled`  |             | `boolean` | `undefined` |
 | `error`     | `error`     |             | `string`  | `undefined` |
 | `hint`      | `hint`      |             | `string`  | `undefined` |
+| `icon`      | `icon`      |             | `string`  | `undefined` |
 | `inputmode` | `inputmode` |             | `string`  | `'text'`    |
 | `label`     | `label`     |             | `string`  | `undefined` |
 | `readonly`  | `readonly`  |             | `boolean` | `undefined` |

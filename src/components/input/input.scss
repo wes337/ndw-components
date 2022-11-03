@@ -6,6 +6,19 @@ ndwc-input {
     flex-direction: column;
     gap: $space-sm;
 
+    .input {
+      position: relative;
+      display: flex;
+      align-items: center;
+      max-width: 480px;
+
+      ndwc-icon {
+        position: absolute;
+        margin-left: calc($space-md + $space-sm);
+        color: $nordea-blue;
+      }
+    }
+
     input {
       background-color: $white;
       border: 0;
@@ -14,11 +27,14 @@ ndwc-input {
       padding: $space-md calc($space-md + $space-sm);
       font-size: $font-size-lg;
       line-height: $line-height-lg;
-      max-width: 480px;
       flex-grow: 1;
 
       &:focus {
         outline-color: $nordea-blue;
+      }
+
+      &.icon {
+        padding-left: calc($space-xl + $space-md);
       }
     }
 
@@ -39,7 +55,7 @@ ndwc-input {
       }
 
       span,
-      div {
+      .error {
         display: flex;
         align-items: center;
         gap: $space-md;

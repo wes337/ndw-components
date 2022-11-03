@@ -13,6 +13,7 @@ export class Input {
   @Prop({ reflect: true }) error: string;
   @Prop({ mutable: true }) value: string;
   @Prop() inputmode = 'text';
+  @Prop() icon: string;
 
   @Event() inputChange: EventEmitter<InputEvent>;
   @Event() inputFocus: EventEmitter<FocusEvent>;
@@ -24,20 +25,24 @@ export class Input {
       <Host>
         <label>
           {this.label?.length > 0 && <span>{this.label}</span>}
-          <input
-            type={this.type}
-            disabled={this.disabled}
-            readonly={this.readonly}
-            value={this.value}
-            inputmode={this.inputmode}
-            aria-invalid={this.error?.length > 0}
-            onChange={this.inputChange.emit}
-            onFocus={this.inputFocus.emit}
-            onBlur={this.inputBlur.emit}
-            onKeyDown={this.inputKeyDown.emit}
-          />
+          <div class="input">
+            {this.icon?.length > 0 && <ndwc-icon icon={this.icon} size="sm"></ndwc-icon>}
+            <input
+              class={this.icon?.length > 0 && 'icon'}
+              type={this.type}
+              disabled={this.disabled}
+              readonly={this.readonly}
+              value={this.value}
+              inputmode={this.inputmode}
+              aria-invalid={this.error?.length > 0}
+              onChange={this.inputChange.emit}
+              onFocus={this.inputFocus.emit}
+              onBlur={this.inputBlur.emit}
+              onKeyDown={this.inputKeyDown.emit}
+            />
+          </div>
           {this.error?.length > 0 && (
-            <div>
+            <div class="error">
               <ndwc-icon icon="exclamation" size="sm"></ndwc-icon>
               <span>{this.error}</span>
             </div>
