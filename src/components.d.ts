@@ -37,6 +37,9 @@ export namespace Components {
         "type": string;
         "variant": NwccButtonVariant;
     }
+    interface NdwcButtonGroup {
+        "vertical": boolean;
+    }
     interface NdwcCheckbox {
         "checked": boolean;
         "disabled": boolean;
@@ -54,6 +57,12 @@ export namespace Components {
         "href": string;
         "icon": string;
         "size": NwccLinkSize;
+    }
+    interface NdwcRichButton {
+        "disabled": boolean;
+        "icon": string;
+        "label": string;
+        "labelFirst": boolean;
     }
     interface NdwcText {
         "as": NwccTextComponents;
@@ -89,6 +98,12 @@ declare global {
         prototype: HTMLNdwcButtonElement;
         new (): HTMLNdwcButtonElement;
     };
+    interface HTMLNdwcButtonGroupElement extends Components.NdwcButtonGroup, HTMLStencilElement {
+    }
+    var HTMLNdwcButtonGroupElement: {
+        prototype: HTMLNdwcButtonGroupElement;
+        new (): HTMLNdwcButtonGroupElement;
+    };
     interface HTMLNdwcCheckboxElement extends Components.NdwcCheckbox, HTMLStencilElement {
     }
     var HTMLNdwcCheckboxElement: {
@@ -107,6 +122,12 @@ declare global {
         prototype: HTMLNdwcLinkElement;
         new (): HTMLNdwcLinkElement;
     };
+    interface HTMLNdwcRichButtonElement extends Components.NdwcRichButton, HTMLStencilElement {
+    }
+    var HTMLNdwcRichButtonElement: {
+        prototype: HTMLNdwcRichButtonElement;
+        new (): HTMLNdwcRichButtonElement;
+    };
     interface HTMLNdwcTextElement extends Components.NdwcText, HTMLStencilElement {
     }
     var HTMLNdwcTextElement: {
@@ -117,9 +138,11 @@ declare global {
         "my-component": HTMLMyComponentElement;
         "ndwc-breadcrumbs": HTMLNdwcBreadcrumbsElement;
         "ndwc-button": HTMLNdwcButtonElement;
+        "ndwc-button-group": HTMLNdwcButtonGroupElement;
         "ndwc-checkbox": HTMLNdwcCheckboxElement;
         "ndwc-icon": HTMLNdwcIconElement;
         "ndwc-link": HTMLNdwcLinkElement;
+        "ndwc-rich-button": HTMLNdwcRichButtonElement;
         "ndwc-text": HTMLNdwcTextElement;
     }
 }
@@ -151,6 +174,9 @@ declare namespace LocalJSX {
         "type"?: string;
         "variant"?: NwccButtonVariant;
     }
+    interface NdwcButtonGroup {
+        "vertical"?: boolean;
+    }
     interface NdwcCheckbox {
         "checked"?: boolean;
         "disabled"?: boolean;
@@ -171,6 +197,12 @@ declare namespace LocalJSX {
         "icon"?: string;
         "size"?: NwccLinkSize;
     }
+    interface NdwcRichButton {
+        "disabled"?: boolean;
+        "icon"?: string;
+        "label"?: string;
+        "labelFirst"?: boolean;
+    }
     interface NdwcText {
         "as"?: NwccTextComponents;
         "header"?: boolean;
@@ -181,9 +213,11 @@ declare namespace LocalJSX {
         "my-component": MyComponent;
         "ndwc-breadcrumbs": NdwcBreadcrumbs;
         "ndwc-button": NdwcButton;
+        "ndwc-button-group": NdwcButtonGroup;
         "ndwc-checkbox": NdwcCheckbox;
         "ndwc-icon": NdwcIcon;
         "ndwc-link": NdwcLink;
+        "ndwc-rich-button": NdwcRichButton;
         "ndwc-text": NdwcText;
     }
 }
@@ -194,9 +228,11 @@ declare module "@stencil/core" {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "ndwc-breadcrumbs": LocalJSX.NdwcBreadcrumbs & JSXBase.HTMLAttributes<HTMLNdwcBreadcrumbsElement>;
             "ndwc-button": LocalJSX.NdwcButton & JSXBase.HTMLAttributes<HTMLNdwcButtonElement>;
+            "ndwc-button-group": LocalJSX.NdwcButtonGroup & JSXBase.HTMLAttributes<HTMLNdwcButtonGroupElement>;
             "ndwc-checkbox": LocalJSX.NdwcCheckbox & JSXBase.HTMLAttributes<HTMLNdwcCheckboxElement>;
             "ndwc-icon": LocalJSX.NdwcIcon & JSXBase.HTMLAttributes<HTMLNdwcIconElement>;
             "ndwc-link": LocalJSX.NdwcLink & JSXBase.HTMLAttributes<HTMLNdwcLinkElement>;
+            "ndwc-rich-button": LocalJSX.NdwcRichButton & JSXBase.HTMLAttributes<HTMLNdwcRichButtonElement>;
             "ndwc-text": LocalJSX.NdwcText & JSXBase.HTMLAttributes<HTMLNdwcTextElement>;
         }
     }

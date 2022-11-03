@@ -1,0 +1,294 @@
+{
+  "version": 1.1,
+  "tags": [
+    {
+      "name": "my-component",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "first",
+          "description": "The first name"
+        },
+        {
+          "name": "last",
+          "description": "The last name"
+        },
+        {
+          "name": "middle",
+          "description": "The middle name"
+        }
+      ]
+    },
+    {
+      "name": "ndwc-breadcrumbs",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "dark",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "ndwc-button",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "compact",
+          "description": ""
+        },
+        {
+          "name": "dark",
+          "description": ""
+        },
+        {
+          "name": "disabled",
+          "description": ""
+        },
+        {
+          "name": "icon",
+          "description": ""
+        },
+        {
+          "name": "type",
+          "description": ""
+        },
+        {
+          "name": "variant",
+          "description": "",
+          "values": [
+            {
+              "name": "primary"
+            },
+            {
+              "name": "secondary"
+            },
+            {
+              "name": "tertiary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ndwc-button-group",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "vertical",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "ndwc-checkbox",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "checked",
+          "description": ""
+        },
+        {
+          "name": "disabled",
+          "description": ""
+        },
+        {
+          "name": "error",
+          "description": ""
+        },
+        {
+          "name": "indeterminate",
+          "description": ""
+        },
+        {
+          "name": "name",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "ndwc-icon",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "color",
+          "description": ""
+        },
+        {
+          "name": "icon",
+          "description": ""
+        },
+        {
+          "name": "size",
+          "description": "",
+          "values": [
+            {
+              "name": "lg"
+            },
+            {
+              "name": "md"
+            },
+            {
+              "name": "sm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ndwc-link",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "external",
+          "description": ""
+        },
+        {
+          "name": "href",
+          "description": ""
+        },
+        {
+          "name": "icon",
+          "description": ""
+        },
+        {
+          "name": "size",
+          "description": "",
+          "values": [
+            {
+              "name": "lg"
+            },
+            {
+              "name": "md"
+            },
+            {
+              "name": "sm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ndwc-rich-button",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "disabled",
+          "description": ""
+        },
+        {
+          "name": "icon",
+          "description": ""
+        },
+        {
+          "name": "label",
+          "description": ""
+        },
+        {
+          "name": "label-first",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "ndwc-text",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "as",
+          "description": "",
+          "values": [
+            {
+              "name": "div"
+            },
+            {
+              "name": "li"
+            },
+            {
+              "name": "p"
+            },
+            {
+              "name": "span"
+            }
+          ]
+        },
+        {
+          "name": "header",
+          "description": ""
+        },
+        {
+          "name": "size",
+          "description": "",
+          "values": [
+            {
+              "name": "lg"
+            },
+            {
+              "name": "md"
+            },
+            {
+              "name": "sm"
+            },
+            {
+              "name": "xl"
+            },
+            {
+              "name": "xxl"
+            },
+            {
+              "name": "xxxl"
+            },
+            {
+              "name": "xxxxl"
+            },
+            {
+              "name": "xxxxxl"
+            }
+          ]
+        },
+        {
+          "name": "weight",
+          "description": "",
+          "values": [
+            {
+              "name": "bold"
+            },
+            {
+              "name": "medium"
+            },
+            {
+              "name": "regular"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -32,31 +32,66 @@
     <div id="breadcrumbs-dark" style="background-color: #00005e; padding: 16px; border-radius: 8px">
       <ndwc-breadcrumbs dark></ndwc-breadcrumbs>
     </div>
-    <div id="buttons" style="display: flex; padding: 16px; gap: 8px; align-items: center">
-      <ndwc-button disabled>Click me</ndwc-button>
-      <ndwc-button>Primary</ndwc-button>
-      <ndwc-button icon="send-alt">Primary with icon</ndwc-button>
-      <ndwc-button variant="secondary">Secondary</ndwc-button>
-      <ndwc-button variant="tertiary">Tertiary</ndwc-button>
-      <ndwc-button variant="tertiary" compact>Compact</ndwc-button>
+
+    <div>
+      <hr />
+      <ndwc-text header size="xxxl">Buttons</ndwc-text>
+      <div id="buttons" style="display: flex; padding: 16px; gap: 8px; align-items: center">
+        <ndwc-button disabled>Click me</ndwc-button>
+        <ndwc-button>Primary</ndwc-button>
+        <ndwc-button icon="send-alt">Primary with icon</ndwc-button>
+        <ndwc-button variant="secondary">Secondary</ndwc-button>
+        <ndwc-button variant="tertiary">Tertiary</ndwc-button>
+        <ndwc-button variant="tertiary" compact>Compact</ndwc-button>
+      </div>
+      <div
+        id="dark-buttons"
+        style="
+          display: flex;
+          padding: 16px;
+          border-radius: 8px;
+          gap: 8px;
+          align-items: center;
+          background-color: #00005e;
+        "
+      >
+        <ndwc-button disabled dark>Click me</ndwc-button>
+        <ndwc-button dark>Primary</ndwc-button>
+        <ndwc-button variant="secondary" dark>Secondary</ndwc-button>
+        <ndwc-button variant="tertiary" dark>Tertiary</ndwc-button>
+        <ndwc-button variant="tertiary" compact dark>Compact</ndwc-button>
+      </div>
+      <div id="button-group" style="display: flex; padding: 16px; gap: 8px">
+        <div style="display: flex; flex-direction: column; flex-grow: 1">
+          <ndwc-text header size="xl">Button group</ndwc-text>
+          <ndwc-button-group>
+            <ndwc-button variant="secondary">Button one</ndwc-button>
+            <ndwc-button>Button two</ndwc-button>
+          </ndwc-button-group>
+        </div>
+        <div style="display: flex; flex-direction: column; flex-grow: 1">
+          <ndwc-text header size="xl">Vertical button group</ndwc-text>
+          <ndwc-button-group vertical>
+            <ndwc-button>Button one</ndwc-button>
+            <ndwc-button variant="secondary">Button two</ndwc-button>
+          </ndwc-button-group>
+        </div>
+      </div>
+      <div id="rich-buttons" style="display: flex; flex-direction: column; padding: 16px; gap: 8px">
+        <ndwc-rich-button icon="placeholder">Primary label only</ndwc-rich-button>
+        <ndwc-rich-button icon="placeholder" label="Secondary label">
+          Primary label
+        </ndwc-rich-button>
+        <ndwc-rich-button icon="placeholder" label="Secondary label first" labelFirst>
+          Primary label
+        </ndwc-rich-button>
+        <ndwc-rich-button icon="placeholder" label="Secondary label" disabled>
+          Primary label
+        </ndwc-rich-button>
+      </div>
+      <hr />
     </div>
-    <div
-      id="dark-buttons"
-      style="
-        display: flex;
-        padding: 16px;
-        border-radius: 8px;
-        gap: 8px;
-        align-items: center;
-        background-color: #00005e;
-      "
-    >
-      <ndwc-button disabled dark>Click me</ndwc-button>
-      <ndwc-button dark>Primary</ndwc-button>
-      <ndwc-button variant="secondary" dark>Secondary</ndwc-button>
-      <ndwc-button variant="tertiary" dark>Tertiary</ndwc-button>
-      <ndwc-button variant="tertiary" compact dark>Compact</ndwc-button>
-    </div>
+
     <div id="checkbox" style="display: flex; padding: 16px; gap: 8px; align-items: center">
       <ndwc-checkbox>Default checkbox</ndwc-checkbox>
       <ndwc-checkbox disabled checked>Disabled checkbox</ndwc-checkbox>

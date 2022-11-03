@@ -12,7 +12,7 @@ ndwc-link {
     }
 
     &:focus-visible {
-      border-radius: $border-radius-button;
+      border-radius: $button-border-radius;
       outline: 4px solid $nordea-blue;
       outline-offset: 4px;
     }

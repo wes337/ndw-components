@@ -1,5 +1,5 @@
 import { Component, Prop, h, Host } from '@stencil/core';
-import { NwccButtonVariant } from './button.types';
+import { NwccButtonVariant, NwccButtonVariants } from './button.types';
 
 @Component({
   tag: 'ndwc-button',
@@ -14,11 +14,13 @@ export class Button {
   @Prop() icon: string;
 
   render() {
+    const variant = NwccButtonVariants.includes(this.variant) ? this.variant : 'primary';
+
     return (
       <Host>
         <button
           class={{
-            [this.variant]: true,
+            [variant]: true,
             dark: !!this.dark,
             compact: !!this.compact,
           }}

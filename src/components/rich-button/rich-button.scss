@@ -1,0 +1,68 @@
+ndwc-rich-button {
+  button {
+    display: flex;
+    align-items: center;
+    gap: $space-sm;
+    font-family: $body-font-regular;
+    background-color: $white;
+    border: 1px solid $light-gray;
+    border-radius: $border-radius-m;
+    font-size: $font-size-lg;
+    line-height: $line-height-lg;
+    padding: $space-lg;
+    width: 100%;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $cool-gray;
+    }
+
+    &:focus-visible {
+      outline: 4px solid $nordea-blue;
+      outline-offset: 2px;
+
+      &.dark {
+        outline-color: $white;
+      }
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      white-space: nowrap;
+
+      span {
+        color: $dark-gray;
+        font-size: $font-size-md;
+        line-height: $line-height-md;
+        white-space: nowrap;
+      }
+    }
+
+    ndwc-icon {
+      color: $nordea-blue;
+    }
+  }
+
+  &[disabled] {
+    button {
+      background-color: $light-gray;
+      border-color: $medium-gray;
+      cursor: default;
+      pointer-events: none;
+
+      div,
+      span,
+      ndwc-icon {
+        color: $dark-gray;
+      }
+    }
+  }
+
+  &[labelFirst] {
+    button div {
+      flex-flow: column-reverse;
+    }
+  }
+}

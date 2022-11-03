@@ -1,0 +1,16 @@
+ndwc-button-group {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+
+  ndwc-button,
+  button {
+    width: 100%;
+    max-width: $button-max-width;
+  }
+
+  &[vertical] {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
