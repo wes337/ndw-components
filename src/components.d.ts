@@ -55,6 +55,7 @@ export namespace Components {
     interface NdwcInfoBanner {
         "action": string;
         "label": string;
+        "soft": boolean;
     }
     interface NdwcLink {
         "external": boolean;
@@ -86,6 +87,10 @@ export interface NdwcBreadcrumbsCustomEvent<T> extends CustomEvent<T> {
 export interface NdwcCheckboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLNdwcCheckboxElement;
+}
+export interface NdwcInfoBannerCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLNdwcInfoBannerElement;
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -216,6 +221,8 @@ declare namespace LocalJSX {
     interface NdwcInfoBanner {
         "action"?: string;
         "label"?: string;
+        "onActionClicked"?: (event: NdwcInfoBannerCustomEvent<MouseEvent>) => void;
+        "soft"?: boolean;
     }
     interface NdwcLink {
         "external"?: boolean;

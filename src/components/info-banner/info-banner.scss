@@ -5,6 +5,7 @@ ndwc-info-banner {
   gap: $space-md;
   background-color: $cloud-blue;
   align-items: center;
+  border: 1px solid $cloud-blue;
   border-radius: $border-radius-sm;
 
   div {
@@ -30,5 +31,10 @@ ndwc-info-banner {
 
   ndwc-icon {
     margin-bottom: auto;
+  }
+
+  &[soft] {
+    background-color: $white;
+    border-color: $medium-gray;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 'ndwc-info-banner',
@@ -7,6 +7,9 @@ import { Component, Host, h, Prop } from '@stencil/core';
 export class InfoBanner {
   @Prop() label: string;
   @Prop() action: string;
+  @Prop({ reflect: true }) soft: boolean;
+
+  @Event() actionClicked: EventEmitter<MouseEvent>;
 
   render() {
     return (
@@ -16,7 +19,7 @@ export class InfoBanner {
           {this.label?.length > 0 && <span>{this.label}</span>}
           <slot></slot>
           {this.action?.length > 0 && (
-            <ndwc-button variant="tertiary" compact>
+            <ndwc-button variant="tertiary" compact onClick={this.actionClicked.emit}>
               {this.action}
             </ndwc-button>
           )}
