@@ -257,7 +257,6 @@ declare namespace LocalJSX {
         "onInputBlur"?: (event: NdwcInputCustomEvent<FocusEvent>) => void;
         "onInputChange"?: (event: NdwcInputCustomEvent<InputEvent>) => void;
         "onInputFocus"?: (event: NdwcInputCustomEvent<FocusEvent>) => void;
-        "onInputInput"?: (event: NdwcInputCustomEvent<InputEvent>) => void;
         "onInputKeyDown"?: (event: NdwcInputCustomEvent<KeyboardEvent>) => void;
         "readonly"?: boolean;
         "type"?: string;

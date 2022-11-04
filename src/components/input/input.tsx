@@ -15,11 +15,15 @@ export class Input {
   @Prop() inputmode = 'text';
   @Prop() icon: string;
 
-  @Event() inputInput: EventEmitter<InputEvent>;
   @Event() inputChange: EventEmitter<InputEvent>;
   @Event() inputFocus: EventEmitter<FocusEvent>;
   @Event() inputBlur: EventEmitter<FocusEvent>;
   @Event() inputKeyDown: EventEmitter<KeyboardEvent>;
+
+  private handleInput(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    this.value = input.value;
+  }
 
   render() {
     return (
@@ -36,7 +40,7 @@ export class Input {
               value={this.value}
               inputmode={this.inputmode}
               aria-invalid={this.error?.length > 0}
-              onInput={this.inputInput.emit}
+              onInput={this.handleInput}
               onChange={this.inputChange.emit}
               onFocus={this.inputFocus.emit}
               onBlur={this.inputBlur.emit}
