@@ -26,24 +26,22 @@ export class Input {
   private handleChange(event: InputEvent): void {
     const input = event.target as HTMLInputElement;
     this.value = input.value;
-    const inputEvent = new InputEvent('change', event);
-    this.input.dispatchEvent(inputEvent);
   }
 
   private handleInput(event: InputEvent): void {
     const input = event.target as HTMLInputElement;
     this.value = input.value;
-    const inputEvent = new InputEvent('change', event);
-    this.input.dispatchEvent(inputEvent);
   }
 
   private handleFocus(event: FocusEvent): void {
     const focusEvent = new FocusEvent('focus', event);
+    Object.defineProperty(focusEvent, 'target', { writable: false, value: event.target });
     this.input.dispatchEvent(focusEvent);
   }
 
   private handleBlur(event: FocusEvent): void {
     const focusEvent = new FocusEvent('blur', event);
+    Object.defineProperty(focusEvent, 'target', { writable: false, value: event.target });
     this.input.dispatchEvent(focusEvent);
   }
 
