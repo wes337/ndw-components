@@ -15,6 +15,7 @@ export class Input {
   @Prop() inputmode = 'text';
   @Prop() icon: string;
 
+  @Event() inputInput: EventEmitter<InputEvent>;
   @Event() inputChange: EventEmitter<InputEvent>;
   @Event() inputFocus: EventEmitter<FocusEvent>;
   @Event() inputBlur: EventEmitter<FocusEvent>;
@@ -35,6 +36,7 @@ export class Input {
               value={this.value}
               inputmode={this.inputmode}
               aria-invalid={this.error?.length > 0}
+              onInput={this.inputInput.emit}
               onChange={this.inputChange.emit}
               onFocus={this.inputFocus.emit}
               onBlur={this.inputBlur.emit}

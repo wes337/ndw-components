@@ -27,6 +27,7 @@
 | `inputBlur`    |             | `CustomEvent<FocusEvent>`    |
 | `inputChange`  |             | `CustomEvent<InputEvent>`    |
 | `inputFocus`   |             | `CustomEvent<FocusEvent>`    |
+| `inputInput`   |             | `CustomEvent<InputEvent>`    |
 | `inputKeyDown` |             | `CustomEvent<KeyboardEvent>` |
 
 
