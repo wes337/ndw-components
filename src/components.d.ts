@@ -254,8 +254,10 @@ declare namespace LocalJSX {
         "icon"?: string;
         "inputmode"?: string;
         "label"?: string;
-        "onBlur"?: (event: NdwcInputCustomEvent<FocusEvent>) => void;
-        "onFocus"?: (event: NdwcInputCustomEvent<FocusEvent>) => void;
+        "onInputBlur"?: (event: NdwcInputCustomEvent<FocusEvent>) => void;
+        "onInputChange"?: (event: NdwcInputCustomEvent<InputEvent>) => void;
+        "onInputFocus"?: (event: NdwcInputCustomEvent<FocusEvent>) => void;
+        "onInputInput"?: (event: NdwcInputCustomEvent<InputEvent>) => void;
         "readonly"?: boolean;
         "type"?: string;
         "value"?: string;

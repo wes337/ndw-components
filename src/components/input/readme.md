@@ -22,10 +22,12 @@
 
 ## Events
 
-| Event   | Description | Type                      |
-| ------- | ----------- | ------------------------- |
-| `blur`  |             | `CustomEvent<FocusEvent>` |
-| `focus` |             | `CustomEvent<FocusEvent>` |
+| Event         | Description | Type                      |
+| ------------- | ----------- | ------------------------- |
+| `inputBlur`   |             | `CustomEvent<FocusEvent>` |
+| `inputChange` |             | `CustomEvent<InputEvent>` |
+| `inputFocus`  |             | `CustomEvent<FocusEvent>` |
+| `inputInput`  |             | `CustomEvent<InputEvent>` |
 
 
 ## Dependencies

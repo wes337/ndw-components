@@ -15,20 +15,36 @@ export class Input {
   @Prop() inputmode = 'text';
   @Prop() icon: string;
 
-  @Event() focus: EventEmitter<FocusEvent>;
-  @Event() blur: EventEmitter<FocusEvent>;
+  @Event() inputChange: EventEmitter<InputEvent>;
+  @Event() inputInput: EventEmitter<InputEvent>;
+  @Event() inputFocus: EventEmitter<FocusEvent>;
+  @Event() inputBlur: EventEmitter<FocusEvent>;
 
   constructor() {
+    this.handleChange = this.handleChange.bind(this);
+    this.handleInput = this.handleInput.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
   }
 
+  private handleChange(event: InputEvent): void {
+    const input = event.target as HTMLInputElement;
+    this.value = input.value;
+    this.inputChange.emit(event);
+  }
+
+  private handleInput(event: InputEvent): void {
+    const input = event.target as HTMLInputElement;
+    this.value = input.value;
+    this.inputInput.emit(event);
+  }
+
   private handleFocus(event: FocusEvent): void {
-    this.focus.emit(event);
+    this.inputFocus.emit(event);
   }
 
   private handleBlur(event: FocusEvent): void {
-    this.blur.emit(event);
+    this.inputBlur.emit(event);
   }
 
   render() {
@@ -46,6 +62,8 @@ export class Input {
               value={this.value}
               inputmode={this.inputmode}
               aria-invalid={this.error?.length > 0}
+              onInput={this.handleInput}
+              onChange={this.handleChange}
               onFocus={this.handleFocus}
               onBlur={this.handleBlur}
             />
