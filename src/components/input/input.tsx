@@ -15,8 +15,21 @@ export class Input {
   @Prop() inputmode = 'text';
   @Prop() icon: string;
 
-  @Event() focus: EventEmitter<FocusEvent>;
-  @Event() blur: EventEmitter<FocusEvent>;
+  @Event({ bubbles: false }) focus: EventEmitter<FocusEvent>;
+  @Event({ bubbles: false }) blur: EventEmitter<FocusEvent>;
+
+  // constructor() {
+  //   this.handleFocus = this.handleFocus.bind(this);
+  //   this.handleBlur = this.handleBlur.bind(this);
+  // }
+
+  // private handleFocus(event: FocusEvent): void {
+  //   this.focus.emit(event);
+  // }
+
+  // private handleBlur(event: FocusEvent): void {
+  //   this.blur.emit(event);
+  // }
 
   render() {
     return (
