@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 'ndwc-input',
@@ -15,28 +15,8 @@ export class Input {
   @Prop() inputmode = 'text';
   @Prop() icon: string;
 
-  // @Event() inputInput: EventEmitter<InputEvent>;
-  // @Event() inputChange: EventEmitter<InputEvent>;
-  // @Event() inputFocus: EventEmitter<FocusEvent>;
-  // @Event() inputBlur: EventEmitter<FocusEvent>;
-  // @Event() inputKeyDown: EventEmitter<KeyboardEvent>;
-
-  // constructor() {
-  //   this.handleChange = this.handleChange.bind(this);
-  //   this.handleInput = this.handleInput.bind(this);
-  // }
-
-  // private handleInput(event: InputEvent): void {
-  //   const input = event.target as HTMLInputElement;
-  //   this.value = input.value;
-  //   this.inputInput.emit(event);
-  // }
-
-  // private handleChange(event: InputEvent): void {
-  //   const input = event.target as HTMLInputElement;
-  //   this.value = input.value;
-  //   this.inputChange.emit(event);
-  // }
+  @Event() focus: EventEmitter<FocusEvent>;
+  @Event() blur: EventEmitter<FocusEvent>;
 
   render() {
     return (
@@ -53,11 +33,8 @@ export class Input {
               value={this.value}
               inputmode={this.inputmode}
               aria-invalid={this.error?.length > 0}
-              // onInput={this.handleInput}
-              // onChange={this.handleChange}
-              // onFocus={this.inputFocus.emit}
-              // onBlur={this.inputBlur.emit}
-              // onKeyDown={this.inputKeyDown.emit}
+              onFocus={this.focus.emit}
+              onBlur={this.blur.emit}
             />
           </div>
           {this.error?.length > 0 && (

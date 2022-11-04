@@ -20,6 +20,14 @@
 | `value`     | `value`     |             | `string`  | `undefined` |
 
 
+## Events
+
+| Event   | Description | Type                      |
+| ------- | ----------- | ------------------------- |
+| `blur`  |             | `CustomEvent<FocusEvent>` |
+| `focus` |             | `CustomEvent<FocusEvent>` |
+
+
 ## Dependencies
 
 ### Depends on
