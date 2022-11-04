@@ -42,6 +42,8 @@ ndwc-rich-button {
   }
 
   &[disabled] {
+    pointer-events: none;
+
     button {
       background-color: $light-gray;
       border-color: $medium-gray;

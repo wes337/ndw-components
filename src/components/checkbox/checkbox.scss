@@ -60,6 +60,8 @@ ndwc-checkbox {
   }
 
   &[disabled] {
+    pointer-events: none;
+
     label {
       cursor: default;
       color: $nordea-gray;

@@ -38,4 +38,8 @@ ndwc-round-button {
       }
     }
   }
+
+  &[disabled] {
+    pointer-events: none;
+  }
 }
