@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'ndwc-input',
@@ -15,15 +15,28 @@ export class Input {
   @Prop() inputmode = 'text';
   @Prop() icon: string;
 
-  @Event() inputChange: EventEmitter<InputEvent>;
-  @Event() inputFocus: EventEmitter<FocusEvent>;
-  @Event() inputBlur: EventEmitter<FocusEvent>;
-  @Event() inputKeyDown: EventEmitter<KeyboardEvent>;
+  // @Event() inputInput: EventEmitter<InputEvent>;
+  // @Event() inputChange: EventEmitter<InputEvent>;
+  // @Event() inputFocus: EventEmitter<FocusEvent>;
+  // @Event() inputBlur: EventEmitter<FocusEvent>;
+  // @Event() inputKeyDown: EventEmitter<KeyboardEvent>;
 
-  private handleInput(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    this.value = input.value;
-  }
+  // constructor() {
+  //   this.handleChange = this.handleChange.bind(this);
+  //   this.handleInput = this.handleInput.bind(this);
+  // }
+
+  // private handleInput(event: InputEvent): void {
+  //   const input = event.target as HTMLInputElement;
+  //   this.value = input.value;
+  //   this.inputInput.emit(event);
+  // }
+
+  // private handleChange(event: InputEvent): void {
+  //   const input = event.target as HTMLInputElement;
+  //   this.value = input.value;
+  //   this.inputChange.emit(event);
+  // }
 
   render() {
     return (
@@ -40,11 +53,11 @@ export class Input {
               value={this.value}
               inputmode={this.inputmode}
               aria-invalid={this.error?.length > 0}
-              onInput={this.handleInput}
-              onChange={this.inputChange.emit}
-              onFocus={this.inputFocus.emit}
-              onBlur={this.inputBlur.emit}
-              onKeyDown={this.inputKeyDown.emit}
+              // onInput={this.handleInput}
+              // onChange={this.handleChange}
+              // onFocus={this.inputFocus.emit}
+              // onBlur={this.inputBlur.emit}
+              // onKeyDown={this.inputKeyDown.emit}
             />
           </div>
           {this.error?.length > 0 && (
