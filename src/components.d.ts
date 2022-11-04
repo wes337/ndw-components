@@ -103,10 +103,6 @@ export interface NdwcInfoBannerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLNdwcInfoBannerElement;
 }
-export interface NdwcInputCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLNdwcInputElement;
-}
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
@@ -254,10 +250,6 @@ declare namespace LocalJSX {
         "icon"?: string;
         "inputmode"?: string;
         "label"?: string;
-        "onInputBlur"?: (event: NdwcInputCustomEvent<FocusEvent>) => void;
-        "onInputChange"?: (event: NdwcInputCustomEvent<InputEvent>) => void;
-        "onInputFocus"?: (event: NdwcInputCustomEvent<FocusEvent>) => void;
-        "onInputInput"?: (event: NdwcInputCustomEvent<InputEvent>) => void;
         "readonly"?: boolean;
         "type"?: string;
         "value"?: string;

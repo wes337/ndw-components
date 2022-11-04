@@ -1,10 +1,11 @@
-import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
+import { Component, Host, h, Prop, Element } from '@stencil/core';
 
 @Component({
   tag: 'ndwc-input',
   styleUrl: 'input.scss',
 })
 export class Input {
+  @Element() input: HTMLElement;
   @Prop() label: string;
   @Prop() hint: string;
   @Prop({ reflect: true }) type = 'text';
@@ -14,11 +15,6 @@ export class Input {
   @Prop({ mutable: true }) value: string;
   @Prop() inputmode = 'text';
   @Prop() icon: string;
-
-  @Event() inputChange: EventEmitter<InputEvent>;
-  @Event() inputInput: EventEmitter<InputEvent>;
-  @Event() inputFocus: EventEmitter<FocusEvent>;
-  @Event() inputBlur: EventEmitter<FocusEvent>;
 
   constructor() {
     this.handleChange = this.handleChange.bind(this);
@@ -30,21 +26,21 @@ export class Input {
   private handleChange(event: InputEvent): void {
     const input = event.target as HTMLInputElement;
     this.value = input.value;
-    this.inputChange.emit(event);
+    this.input.dispatchEvent(event);
   }
 
   private handleInput(event: InputEvent): void {
     const input = event.target as HTMLInputElement;
     this.value = input.value;
-    this.inputInput.emit(event);
+    this.input.dispatchEvent(event);
   }
 
   private handleFocus(event: FocusEvent): void {
-    this.inputFocus.emit(event);
+    this.input.dispatchEvent(event);
   }
 
   private handleBlur(event: FocusEvent): void {
-    this.inputBlur.emit(event);
+    this.input.dispatchEvent(event);
   }
 
   render() {

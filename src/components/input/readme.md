@@ -20,16 +20,6 @@
 | `value`     | `value`     |             | `string`  | `undefined` |
 
 
-## Events
-
-| Event         | Description | Type                      |
-| ------------- | ----------- | ------------------------- |
-| `inputBlur`   |             | `CustomEvent<FocusEvent>` |
-| `inputChange` |             | `CustomEvent<InputEvent>` |
-| `inputFocus`  |             | `CustomEvent<FocusEvent>` |
-| `inputInput`  |             | `CustomEvent<InputEvent>` |
-
-
 ## Dependencies
 
 ### Depends on
