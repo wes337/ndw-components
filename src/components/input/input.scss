@@ -1,5 +1,6 @@
 ndwc-input {
   font-family: $body-font-regular;
+  max-width: 480px;
 
   label {
     display: flex;
@@ -10,12 +11,25 @@ ndwc-input {
       position: relative;
       display: flex;
       align-items: center;
-      max-width: 480px;
 
-      ndwc-icon {
+      & > ndwc-icon {
         position: absolute;
         margin-left: calc($space-md + $space-sm);
         color: $nordea-blue;
+      }
+
+      button {
+        position: absolute;
+        right: calc($space-md + $space-sm);
+        color: $medium-gray;
+        padding: 0;
+        background: none;
+        border: 0;
+        cursor: pointer;
+
+        &:focus-visible {
+          @include defaultFocusStyles();
+        }
       }
     }
 
@@ -35,6 +49,10 @@ ndwc-input {
 
       &.icon {
         padding-left: calc($space-xl + $space-md);
+      }
+
+      &.clearable {
+        padding-right: calc($space-xl + $space-md);
       }
     }
 
@@ -87,4 +105,24 @@ ndwc-input {
       background-color: $cool-gray;
     }
   }
+}
+
+/* clears the 'X' from Internet Explorer */
+input[type='search']::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+input[type='search']::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* clears the 'X' from Chrome */
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  display: none;
 }

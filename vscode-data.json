@@ -182,6 +182,10 @@
       },
       "attributes": [
         {
+          "name": "clearable",
+          "description": ""
+        },
+        {
           "name": "disabled",
           "description": ""
         },
@@ -370,6 +374,51 @@
               "name": "regular"
             }
           ]
+        }
+      ]
+    },
+    {
+      "name": "ndwc-text-area",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "disabled",
+          "description": ""
+        },
+        {
+          "name": "error",
+          "description": ""
+        },
+        {
+          "name": "hint",
+          "description": ""
+        },
+        {
+          "name": "label",
+          "description": ""
+        },
+        {
+          "name": "maxlength",
+          "description": ""
+        },
+        {
+          "name": "note",
+          "description": ""
+        },
+        {
+          "name": "readonly",
+          "description": ""
+        },
+        {
+          "name": "rows",
+          "description": ""
+        },
+        {
+          "name": "value",
+          "description": ""
         }
       ]
     }

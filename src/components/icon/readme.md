@@ -23,6 +23,7 @@
  - [ndwc-link](../link)
  - [ndwc-rich-button](../rich-button)
  - [ndwc-round-button](../round-button)
+ - [ndwc-text-area](../text-area)
 
 ### Graph
 ```mermaid
@@ -34,6 +35,7 @@ graph TD;
   ndwc-link --> ndwc-icon
   ndwc-rich-button --> ndwc-icon
   ndwc-round-button --> ndwc-icon
+  ndwc-text-area --> ndwc-icon
   style ndwc-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

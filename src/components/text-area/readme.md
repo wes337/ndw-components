@@ -1,4 +1,4 @@
-# ndwc-input
+# ndwc-text-area
 
 
 
@@ -9,23 +9,15 @@
 
 | Property    | Attribute   | Description | Type      | Default     |
 | ----------- | ----------- | ----------- | --------- | ----------- |
-| `clearable` | `clearable` |             | `boolean` | `undefined` |
 | `disabled`  | `disabled`  |             | `boolean` | `undefined` |
 | `error`     | `error`     |             | `string`  | `undefined` |
 | `hint`      | `hint`      |             | `string`  | `undefined` |
-| `icon`      | `icon`      |             | `string`  | `undefined` |
-| `inputmode` | `inputmode` |             | `string`  | `'text'`    |
 | `label`     | `label`     |             | `string`  | `undefined` |
+| `maxlength` | `maxlength` |             | `number`  | `undefined` |
+| `note`      | `note`      |             | `string`  | `undefined` |
 | `readonly`  | `readonly`  |             | `boolean` | `undefined` |
-| `type`      | `type`      |             | `string`  | `'text'`    |
+| `rows`      | `rows`      |             | `number`  | `undefined` |
 | `value`     | `value`     |             | `string`  | `''`        |
-
-
-## Events
-
-| Event   | Description | Type               |
-| ------- | ----------- | ------------------ |
-| `clear` |             | `CustomEvent<any>` |
 
 
 ## Dependencies
@@ -37,8 +29,8 @@
 ### Graph
 ```mermaid
 graph TD;
-  ndwc-input --> ndwc-icon
-  style ndwc-input fill:#f9f,stroke:#333,stroke-width:4px
+  ndwc-text-area --> ndwc-icon
+  style ndwc-text-area fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

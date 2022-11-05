@@ -58,6 +58,7 @@ export namespace Components {
         "soft": boolean;
     }
     interface NdwcInput {
+        "clearable": boolean;
         "disabled": boolean;
         "error": string;
         "hint": string;
@@ -90,6 +91,17 @@ export namespace Components {
         "size": NwccTextSize;
         "weight": NwccTextWeight;
     }
+    interface NdwcTextArea {
+        "disabled": boolean;
+        "error": string;
+        "hint": string;
+        "label": string;
+        "maxlength": number;
+        "note": string;
+        "readonly": boolean;
+        "rows": number;
+        "value": string;
+    }
 }
 export interface NdwcBreadcrumbsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -102,6 +114,10 @@ export interface NdwcCheckboxCustomEvent<T> extends CustomEvent<T> {
 export interface NdwcInfoBannerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLNdwcInfoBannerElement;
+}
+export interface NdwcInputCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLNdwcInputElement;
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -176,6 +192,12 @@ declare global {
         prototype: HTMLNdwcTextElement;
         new (): HTMLNdwcTextElement;
     };
+    interface HTMLNdwcTextAreaElement extends Components.NdwcTextArea, HTMLStencilElement {
+    }
+    var HTMLNdwcTextAreaElement: {
+        prototype: HTMLNdwcTextAreaElement;
+        new (): HTMLNdwcTextAreaElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
         "ndwc-breadcrumbs": HTMLNdwcBreadcrumbsElement;
@@ -189,6 +211,7 @@ declare global {
         "ndwc-rich-button": HTMLNdwcRichButtonElement;
         "ndwc-round-button": HTMLNdwcRoundButtonElement;
         "ndwc-text": HTMLNdwcTextElement;
+        "ndwc-text-area": HTMLNdwcTextAreaElement;
     }
 }
 declare namespace LocalJSX {
@@ -244,12 +267,14 @@ declare namespace LocalJSX {
         "soft"?: boolean;
     }
     interface NdwcInput {
+        "clearable"?: boolean;
         "disabled"?: boolean;
         "error"?: string;
         "hint"?: string;
         "icon"?: string;
         "inputmode"?: string;
         "label"?: string;
+        "onClear"?: (event: NdwcInputCustomEvent<any>) => void;
         "readonly"?: boolean;
         "type"?: string;
         "value"?: string;
@@ -276,6 +301,17 @@ declare namespace LocalJSX {
         "size"?: NwccTextSize;
         "weight"?: NwccTextWeight;
     }
+    interface NdwcTextArea {
+        "disabled"?: boolean;
+        "error"?: string;
+        "hint"?: string;
+        "label"?: string;
+        "maxlength"?: number;
+        "note"?: string;
+        "readonly"?: boolean;
+        "rows"?: number;
+        "value"?: string;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
         "ndwc-breadcrumbs": NdwcBreadcrumbs;
@@ -289,6 +325,7 @@ declare namespace LocalJSX {
         "ndwc-rich-button": NdwcRichButton;
         "ndwc-round-button": NdwcRoundButton;
         "ndwc-text": NdwcText;
+        "ndwc-text-area": NdwcTextArea;
     }
 }
 export { LocalJSX as JSX };
@@ -307,6 +344,7 @@ declare module "@stencil/core" {
             "ndwc-rich-button": LocalJSX.NdwcRichButton & JSXBase.HTMLAttributes<HTMLNdwcRichButtonElement>;
             "ndwc-round-button": LocalJSX.NdwcRoundButton & JSXBase.HTMLAttributes<HTMLNdwcRoundButtonElement>;
             "ndwc-text": LocalJSX.NdwcText & JSXBase.HTMLAttributes<HTMLNdwcTextElement>;
+            "ndwc-text-area": LocalJSX.NdwcTextArea & JSXBase.HTMLAttributes<HTMLNdwcTextAreaElement>;
         }
     }
 }
