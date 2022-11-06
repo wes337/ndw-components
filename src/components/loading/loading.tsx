@@ -6,10 +6,11 @@ import { Component, Prop, h, Host } from '@stencil/core';
 })
 export class Loading {
   @Prop({ reflect: true }) small: boolean;
+  @Prop() label: string;
 
   render() {
     return (
-      <Host>
+      <Host aria-role="status" aria-live="polite" aria-label={this.label || 'Loading'}>
         <div></div>
         <div></div>
         <div></div>

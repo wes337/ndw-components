@@ -1,2 +1,3 @@
-export const NwccButtonVariants = ['primary', 'secondary', 'tertiary'] as const;
-export type NwccButtonVariant = typeof NwccButtonVariants[number];
+export const NdwcButtonVariants = ['primary', 'secondary', 'tertiary'] as const;
+
+export type NdwcButtonVariant = typeof NdwcButtonVariants[number];

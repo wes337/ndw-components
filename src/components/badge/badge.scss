@@ -1,0 +1,76 @@
+ndwc-badge {
+  div {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $body-font-medium;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+    border-radius: $button-border-radius;
+    padding: $space-xs $space-md;
+    white-space: nowrap;
+
+    &.round {
+      min-height: 8px;
+      min-width: 8px;
+      border-radius: $border-radius-round;
+      padding: 0;
+    }
+
+    &.single {
+      border-radius: $border-radius-round;
+      padding: 0 $space-sm;
+    }
+
+    &.numeric {
+      border-radius: $button-border-radius;
+      padding: 0 $space-sm;
+    }
+  }
+
+  &[variant='warn'] {
+    div {
+      background-color: $dark-red;
+      color: $white;
+    }
+
+    &[muted] div {
+      background-color: rgba($dark-red, 0.25);
+    }
+  }
+
+  &[variant='active'] {
+    div {
+      background-color: $dark-green;
+      color: $white;
+    }
+
+    &[muted] div {
+      background-color: rgba($dark-green, 0.25);
+    }
+  }
+
+  &[variant='blocked'] {
+    div {
+      background-color: $dark-yellow;
+    }
+
+    &[muted] div {
+      background-color: rgba($dark-yellow, 0.25);
+    }
+  }
+
+  &[variant='new'] {
+    div {
+      background-color: $light-blue;
+    }
+
+    &[muted] div {
+      background-color: rgba($light-blue, 0.25);
+    }
+  }
+
+  &[muted] div {
+    color: $dark-gray;
+  }
+}

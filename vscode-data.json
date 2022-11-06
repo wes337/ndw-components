@@ -2,23 +2,36 @@
   "version": 1.1,
   "tags": [
     {
-      "name": "my-component",
+      "name": "ndwc-badge",
       "description": {
         "kind": "markdown",
         "value": ""
       },
       "attributes": [
         {
-          "name": "first",
-          "description": "The first name"
+          "name": "muted",
+          "description": ""
         },
         {
-          "name": "last",
-          "description": "The last name"
-        },
-        {
-          "name": "middle",
-          "description": "The middle name"
+          "name": "variant",
+          "description": "",
+          "values": [
+            {
+              "name": "active"
+            },
+            {
+              "name": "blocked"
+            },
+            {
+              "name": "closed"
+            },
+            {
+              "name": "new"
+            },
+            {
+              "name": "warn"
+            }
+          ]
         }
       ]
     },
@@ -266,6 +279,10 @@
         "value": ""
       },
       "attributes": [
+        {
+          "name": "label",
+          "description": ""
+        },
         {
           "name": "small",
           "description": ""

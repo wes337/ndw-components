@@ -5,25 +5,16 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { NdwcBadgeVariant } from "./components/badge/badge.types";
 import { Breadcrumb } from "./components/breadcrumbs/breadcrumbs.types";
-import { NwccButtonVariant } from "./components/button/button.types";
-import { NwccIcon, NwccIconSize } from "./components/icon/icon.types";
-import { NwccLinkSize } from "./components/link/link.types";
-import { NwccTextComponents, NwccTextSize, NwccTextWeight } from "./components/text/text.types";
+import { NdwcButtonVariant } from "./components/button/button.types";
+import { NdwcIcon, NdwcIconSize } from "./components/icon/icon.types";
+import { NdwcLinkSize } from "./components/link/link.types";
+import { NdwcTextComponents, NdwcTextSize, NdwcTextWeight } from "./components/text/text.types";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface NdwcBadge {
+        "muted": boolean;
+        "variant": NdwcBadgeVariant;
     }
     interface NdwcBreadcrumbs {
         "breadcrumbs": Breadcrumb[];
@@ -35,7 +26,7 @@ export namespace Components {
         "disabled": boolean;
         "icon": string;
         "type": string;
-        "variant": NwccButtonVariant;
+        "variant": NdwcButtonVariant;
     }
     interface NdwcButtonGroup {
         "vertical": boolean;
@@ -49,8 +40,8 @@ export namespace Components {
     }
     interface NdwcIcon {
         "color": string;
-        "icon": NwccIcon | string;
-        "size": NwccIconSize;
+        "icon": NdwcIcon | string;
+        "size": NdwcIconSize;
     }
     interface NdwcInfoBanner {
         "action": string;
@@ -73,9 +64,10 @@ export namespace Components {
         "external": boolean;
         "href": string;
         "icon": string;
-        "size": NwccLinkSize;
+        "size": NdwcLinkSize;
     }
     interface NdwcLoading {
+        "label": string;
         "small": boolean;
     }
     interface NdwcRichButton {
@@ -89,10 +81,10 @@ export namespace Components {
         "icon": string;
     }
     interface NdwcText {
-        "as": NwccTextComponents;
+        "as": NdwcTextComponents;
         "header": boolean;
-        "size": NwccTextSize;
-        "weight": NwccTextWeight;
+        "size": NdwcTextSize;
+        "weight": NdwcTextWeight;
     }
     interface NdwcTextArea {
         "disabled": boolean;
@@ -123,11 +115,11 @@ export interface NdwcInputCustomEvent<T> extends CustomEvent<T> {
     target: HTMLNdwcInputElement;
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLNdwcBadgeElement extends Components.NdwcBadge, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLNdwcBadgeElement: {
+        prototype: HTMLNdwcBadgeElement;
+        new (): HTMLNdwcBadgeElement;
     };
     interface HTMLNdwcBreadcrumbsElement extends Components.NdwcBreadcrumbs, HTMLStencilElement {
     }
@@ -208,7 +200,7 @@ declare global {
         new (): HTMLNdwcTextAreaElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "ndwc-badge": HTMLNdwcBadgeElement;
         "ndwc-breadcrumbs": HTMLNdwcBreadcrumbsElement;
         "ndwc-button": HTMLNdwcButtonElement;
         "ndwc-button-group": HTMLNdwcButtonGroupElement;
@@ -225,19 +217,9 @@ declare global {
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface NdwcBadge {
+        "muted"?: boolean;
+        "variant"?: NdwcBadgeVariant;
     }
     interface NdwcBreadcrumbs {
         "breadcrumbs"?: Breadcrumb[];
@@ -250,7 +232,7 @@ declare namespace LocalJSX {
         "disabled"?: boolean;
         "icon"?: string;
         "type"?: string;
-        "variant"?: NwccButtonVariant;
+        "variant"?: NdwcButtonVariant;
     }
     interface NdwcButtonGroup {
         "vertical"?: boolean;
@@ -267,8 +249,8 @@ declare namespace LocalJSX {
     }
     interface NdwcIcon {
         "color"?: string;
-        "icon": NwccIcon | string;
-        "size"?: NwccIconSize;
+        "icon": NdwcIcon | string;
+        "size"?: NdwcIconSize;
     }
     interface NdwcInfoBanner {
         "action"?: string;
@@ -293,9 +275,10 @@ declare namespace LocalJSX {
         "external"?: boolean;
         "href"?: string;
         "icon"?: string;
-        "size"?: NwccLinkSize;
+        "size"?: NdwcLinkSize;
     }
     interface NdwcLoading {
+        "label"?: string;
         "small"?: boolean;
     }
     interface NdwcRichButton {
@@ -309,10 +292,10 @@ declare namespace LocalJSX {
         "icon": string;
     }
     interface NdwcText {
-        "as"?: NwccTextComponents;
+        "as"?: NdwcTextComponents;
         "header"?: boolean;
-        "size"?: NwccTextSize;
-        "weight"?: NwccTextWeight;
+        "size"?: NdwcTextSize;
+        "weight"?: NdwcTextWeight;
     }
     interface NdwcTextArea {
         "disabled"?: boolean;
@@ -326,7 +309,7 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "ndwc-badge": NdwcBadge;
         "ndwc-breadcrumbs": NdwcBreadcrumbs;
         "ndwc-button": NdwcButton;
         "ndwc-button-group": NdwcButtonGroup;
@@ -346,7 +329,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "ndwc-badge": LocalJSX.NdwcBadge & JSXBase.HTMLAttributes<HTMLNdwcBadgeElement>;
             "ndwc-breadcrumbs": LocalJSX.NdwcBreadcrumbs & JSXBase.HTMLAttributes<HTMLNdwcBreadcrumbsElement>;
             "ndwc-button": LocalJSX.NdwcButton & JSXBase.HTMLAttributes<HTMLNdwcButtonElement>;
             "ndwc-button-group": LocalJSX.NdwcButtonGroup & JSXBase.HTMLAttributes<HTMLNdwcButtonGroupElement>;

@@ -1,5 +1,5 @@
-export type NwccTextSize = 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl' | 'xxxxl' | 'xxxxxl';
+export type NdwcTextSize = 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl' | 'xxxxl' | 'xxxxxl';
 
-export type NwccTextWeight = 'regular' | 'medium' | 'bold';
+export type NdwcTextWeight = 'regular' | 'medium' | 'bold';
 
-export type NwccTextComponents = 'p' | 'span' | 'div' | 'li';
+export type NdwcTextComponents = 'p' | 'span' | 'div' | 'li';

@@ -1,1 +1,1 @@
-export type NwccLinkSize = 'sm' | 'md' | 'lg';
+export type NdwcLinkSize = 'sm' | 'md' | 'lg';

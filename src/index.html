@@ -7,12 +7,11 @@
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
     />
     <title>Nordea Web UI</title>
-
     <script type="module" src="/build/ndw-components.esm.js"></script>
     <script nomodule src="/build/ndw-components.js"></script>
     <style>
       body {
-        visibility: hidden;
+        opacity: 0;
       }
       .enforce-dark-mode {
         background-color: #000000;
@@ -31,13 +30,40 @@
       <ndwc-loading></ndwc-loading>
       <ndwc-loading small></ndwc-loading>
     </div>
+    <div style="display: flex; justify-content: space-between; padding: 16px">
+      <div>
+        <ndwc-text header size="xxxl">Notification dot</ndwc-text>
+        <ndwc-badge></ndwc-badge>
+        <ndwc-badge variant="active"></ndwc-badge>
+        <ndwc-badge variant="new"></ndwc-badge>
+        <ndwc-badge variant="blocked"></ndwc-badge>
+      </div>
+      <div>
+        <ndwc-text header size="xxxl">Notification numeral</ndwc-text>
+        <ndwc-badge>1</ndwc-badge>
+        <ndwc-badge variant="active">2</ndwc-badge>
+        <ndwc-badge variant="new">3</ndwc-badge>
+        <ndwc-badge variant="blocked">435</ndwc-badge>
+      </div>
+      <div>
+        <ndwc-text header size="xxxl">Status badge</ndwc-text>
+        <ndwc-badge>Default</ndwc-badge>
+        <ndwc-badge muted>Default</ndwc-badge>
+        <ndwc-badge variant="active">Active</ndwc-badge>
+        <ndwc-badge variant="active" muted>Active</ndwc-badge>
+        <ndwc-badge variant="new">New</ndwc-badge>
+        <ndwc-badge variant="new" muted>New</ndwc-badge>
+        <ndwc-badge variant="blocked">Blocked</ndwc-badge>
+        <ndwc-badge variant="blocked" muted>Blocked</ndwc-badge>
+      </div>
+    </div>
+
     <div id="breadcrumbs" style="padding: 16px">
       <ndwc-breadcrumbs></ndwc-breadcrumbs>
     </div>
     <div id="breadcrumbs-dark" style="background-color: #00005e; padding: 16px; border-radius: 8px">
       <ndwc-breadcrumbs dark></ndwc-breadcrumbs>
     </div>
-
     <div>
       <hr />
       <ndwc-text header size="xxxl">Buttons</ndwc-text>
@@ -102,7 +128,6 @@
       </div>
       <hr />
     </div>
-
     <div id="checkbox" style="display: flex; padding: 16px; gap: 8px; align-items: center">
       <ndwc-checkbox>Default checkbox</ndwc-checkbox>
       <ndwc-checkbox disabled checked>Disabled checkbox</ndwc-checkbox>
@@ -238,7 +263,7 @@
   </body>
   <script>
     document.fonts.ready.then(() => {
-      document.body.style.visibility = 'visible';
+      document.body.style.opacity = 1;
       const darkModeButton = document.querySelector('#dark-mode-button');
       darkModeButton.addEventListener('click', () => {
         document.body.classList.toggle('enforce-dark-mode');

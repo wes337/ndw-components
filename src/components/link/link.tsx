@@ -1,5 +1,5 @@
 import { Component, Prop, h, Host } from '@stencil/core';
-import { NwccLinkSize } from './link.types';
+import { NdwcLinkSize } from './link.types';
 
 @Component({
   tag: 'ndwc-link',
@@ -9,7 +9,7 @@ export class Link {
   @Prop() href: string;
   @Prop() external: boolean;
   @Prop() icon: string;
-  @Prop({ reflect: true }) size: NwccLinkSize = 'md';
+  @Prop({ reflect: true }) size: NdwcLinkSize = 'md';
 
   render() {
     const iconSize = this.size === 'lg' ? 'md' : 'sm';

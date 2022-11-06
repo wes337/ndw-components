@@ -4,9 +4,9 @@ export enum ICON_SIZE {
   'lg' = 32,
 }
 
-export type NwccIconSize = keyof typeof ICON_SIZE;
+export type NdwcIconSize = keyof typeof ICON_SIZE;
 
-export type NwccIcon =
+export type NdwcIcon =
   | 'abacus'
   | 'accounts'
   | 'add-as-a-recipient'
