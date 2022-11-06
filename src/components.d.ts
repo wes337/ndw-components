@@ -75,6 +75,9 @@ export namespace Components {
         "icon": string;
         "size": NwccLinkSize;
     }
+    interface NdwcLoading {
+        "small": boolean;
+    }
     interface NdwcRichButton {
         "disabled": boolean;
         "icon": string;
@@ -174,6 +177,12 @@ declare global {
         prototype: HTMLNdwcLinkElement;
         new (): HTMLNdwcLinkElement;
     };
+    interface HTMLNdwcLoadingElement extends Components.NdwcLoading, HTMLStencilElement {
+    }
+    var HTMLNdwcLoadingElement: {
+        prototype: HTMLNdwcLoadingElement;
+        new (): HTMLNdwcLoadingElement;
+    };
     interface HTMLNdwcRichButtonElement extends Components.NdwcRichButton, HTMLStencilElement {
     }
     var HTMLNdwcRichButtonElement: {
@@ -208,6 +217,7 @@ declare global {
         "ndwc-info-banner": HTMLNdwcInfoBannerElement;
         "ndwc-input": HTMLNdwcInputElement;
         "ndwc-link": HTMLNdwcLinkElement;
+        "ndwc-loading": HTMLNdwcLoadingElement;
         "ndwc-rich-button": HTMLNdwcRichButtonElement;
         "ndwc-round-button": HTMLNdwcRoundButtonElement;
         "ndwc-text": HTMLNdwcTextElement;
@@ -285,6 +295,9 @@ declare namespace LocalJSX {
         "icon"?: string;
         "size"?: NwccLinkSize;
     }
+    interface NdwcLoading {
+        "small"?: boolean;
+    }
     interface NdwcRichButton {
         "disabled"?: boolean;
         "icon"?: string;
@@ -322,6 +335,7 @@ declare namespace LocalJSX {
         "ndwc-info-banner": NdwcInfoBanner;
         "ndwc-input": NdwcInput;
         "ndwc-link": NdwcLink;
+        "ndwc-loading": NdwcLoading;
         "ndwc-rich-button": NdwcRichButton;
         "ndwc-round-button": NdwcRoundButton;
         "ndwc-text": NdwcText;
@@ -341,6 +355,7 @@ declare module "@stencil/core" {
             "ndwc-info-banner": LocalJSX.NdwcInfoBanner & JSXBase.HTMLAttributes<HTMLNdwcInfoBannerElement>;
             "ndwc-input": LocalJSX.NdwcInput & JSXBase.HTMLAttributes<HTMLNdwcInputElement>;
             "ndwc-link": LocalJSX.NdwcLink & JSXBase.HTMLAttributes<HTMLNdwcLinkElement>;
+            "ndwc-loading": LocalJSX.NdwcLoading & JSXBase.HTMLAttributes<HTMLNdwcLoadingElement>;
             "ndwc-rich-button": LocalJSX.NdwcRichButton & JSXBase.HTMLAttributes<HTMLNdwcRichButtonElement>;
             "ndwc-round-button": LocalJSX.NdwcRoundButton & JSXBase.HTMLAttributes<HTMLNdwcRoundButtonElement>;
             "ndwc-text": LocalJSX.NdwcText & JSXBase.HTMLAttributes<HTMLNdwcTextElement>;

@@ -260,6 +260,19 @@
       ]
     },
     {
+      "name": "ndwc-loading",
+      "description": {
+        "kind": "markdown",
+        "value": ""
+      },
+      "attributes": [
+        {
+          "name": "small",
+          "description": ""
+        }
+      ]
+    },
+    {
       "name": "ndwc-rich-button",
       "description": {
         "kind": "markdown",

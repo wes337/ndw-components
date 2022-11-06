@@ -29,6 +29,7 @@ export const config: Config = {
         'src/globals/variables.scss',
         'src/globals/mixins.scss',
         'src/globals/fonts.scss',
+        'src/globals/animations.scss',
       ],
     }),
   ],
